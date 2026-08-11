@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import portrait from "@/assets/rimu-portrait.png";
+import { Reveal } from "@/components/site/Reveal";
 import { projects, services } from "@/lib/portfolio-data";
 
 const title = "Shahida Akter Rimu — UI/UX Designer & Frontend Developer";
@@ -34,14 +35,17 @@ function Index() {
           className="pointer-events-none absolute -bottom-52 -left-32 -z-10 size-[32rem] rounded-full bg-accent/70 blur-[120px]"
         />
         <div className="mx-auto grid w-[min(92%,1180px)] items-center gap-14 py-16 md:grid-cols-[1.05fr_0.95fr] md:py-24">
-          <div className="fade-up">
+          <div>
+            <Reveal from="up" delay={0}>
             <span className="eyebrow rounded-full border border-border bg-card/70 px-4 py-2 text-primary backdrop-blur">
               <span className="relative flex size-1.5">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-70" />
                 <span className="relative inline-flex size-1.5 rounded-full bg-primary" />
               </span>
-              Available for internships & freelance
+              Available for jobs & freelance
             </span>
+            </Reveal>
+            <Reveal from="up" delay={120}>
             <h1 className="mt-7 text-[clamp(2.4rem,6.2vw,4.15rem)] leading-[1.02]">
               Building{" "}
               <span className="bg-gradient-to-r from-primary to-foreground bg-clip-text text-transparent">
@@ -49,10 +53,14 @@ function Index() {
               </span>{" "}
               digital experiences
             </h1>
+            </Reveal>
+            <Reveal from="up" delay={220}>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
               I'm Shahida Akter Rimu — a final-year Computer Science & Engineering student who designs
               user-centered interfaces and builds them for the web.
             </p>
+            </Reveal>
+            <Reveal from="up" delay={320}>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
                 to="/portfolio"
@@ -68,20 +76,21 @@ function Index() {
                 Contact me
               </Link>
             </div>
+            </Reveal>
             <dl className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-8">
               {[
                 { k: "3+", v: "Featured projects" },
                 { k: "2026", v: "KAIST WFK trainee" },
                 { k: "UI/UX", v: "Design & frontend" },
-              ].map((s) => (
-                <div key={s.v}>
+              ].map((s, i) => (
+                <Reveal key={s.v} from="up" delay={420 + i * 100}>
                   <dt className="font-display text-2xl text-foreground">{s.k}</dt>
                   <dd className="mt-1 text-xs text-muted-foreground">{s.v}</dd>
-                </div>
+                </Reveal>
               ))}
             </dl>
           </div>
-          <div className="fade-up relative mx-auto w-full max-w-md">
+          <Reveal from="scale" delay={200} className="relative mx-auto w-full max-w-md">
             <div
               aria-hidden
               className="absolute -inset-3 -z-10 rounded-[2.5rem] bg-gradient-to-br from-primary/40 via-accent to-transparent blur-xl"
@@ -90,8 +99,10 @@ function Index() {
               <img
                 src={portrait}
                 alt="Portrait of Shahida Akter Rimu"
-                width={1024}
-                height={1280}
+                width={1280}
+                height={1600}
+                decoding="async"
+                fetchPriority="high"
                 className="aspect-[4/5] w-full rounded-[1.75rem] object-cover"
               />
             </div>
@@ -99,7 +110,7 @@ function Index() {
               <p className="font-display text-sm">Figma → React</p>
               <p className="text-xs text-muted-foreground">Design to code handoff</p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 

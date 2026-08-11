@@ -90,8 +90,8 @@ function Index() {
               <img
                 src={portrait}
                 alt="Portrait of Shahida Akter Rimu"
-                width={232}
-                height={254}
+                width={1024}
+                height={1280}
                 className="aspect-[4/5] w-full rounded-[1.75rem] object-cover"
               />
             </div>

@@ -55,10 +55,17 @@ function Index() {
             </h1>
             </Reveal>
             <Reveal from="up" delay={220}>
-            <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-              I'm Shahida Akter Rimu — a final-year Computer Science & Engineering student who designs
-              user-centered interfaces and builds them for the web.
-            </p>
+            <ul className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3">
+              {["UI/UX Designer", "Based in Bangladesh"].map((label) => (
+                <li
+                  key={label}
+                  className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/80 sm:text-sm"
+                >
+                  <span aria-hidden className="size-2.5 shrink-0 bg-primary" />
+                  {label}
+                </li>
+              ))}
+            </ul>
             </Reveal>
             <Reveal from="up" delay={320}>
             <div className="mt-9 flex flex-wrap gap-3">

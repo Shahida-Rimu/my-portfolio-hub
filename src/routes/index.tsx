@@ -86,7 +86,7 @@ function Index() {
             </Reveal>
             <dl className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-8">
               {[
-                { k: "3+", v: "Featured projects" },
+                { k: "10+", v: "Projects" },
                 { k: "2026", v: "KAIST WFK trainee" },
                 { k: "UI/UX", v: "Design & frontend" },
               ].map((s, i) => (

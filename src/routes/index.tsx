@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import portrait from "@/assets/rimu-portrait.png";
 import { Reveal } from "@/components/site/Reveal";
+import { TechMarquee } from "@/components/site/TechMarquee";
 import { projects, services } from "@/lib/portfolio-data";
 
 const title = "Shahida Akter Rimu — UI/UX Designer & Frontend Developer";
@@ -121,7 +122,10 @@ function Index() {
         </div>
       </section>
 
+      <TechMarquee />
+
       <section className="mx-auto w-[min(92%,1180px)] py-12">
+
         <div className="flex flex-wrap items-end justify-between gap-4">
           <h2 className="text-3xl">Selected work</h2>
           <Link to="/portfolio" className="text-sm font-medium text-primary hover:underline">

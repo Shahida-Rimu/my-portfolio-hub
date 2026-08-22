@@ -126,45 +126,54 @@ function Index() {
 
       <section className="mx-auto w-[min(92%,1180px)] py-12">
 
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <h2 className="text-3xl">Selected work</h2>
-          <Link to="/portfolio" className="text-sm font-medium text-primary hover:underline">
-            All projects
-          </Link>
-        </div>
+        <Reveal from="up">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h2 className="text-3xl">Selected work</h2>
+            <Link to="/portfolio" className="text-sm font-medium text-primary hover:underline">
+              All projects
+            </Link>
+          </div>
+        </Reveal>
         <div className="mt-10 grid gap-8 md:grid-cols-3">
-          {projects.map((p) => (
+          {projects.map((p, i) => (
+            <Reveal key={p.slug} from="up" delay={i * 120}>
             <Link
-              key={p.slug}
               to="/portfolio/$slug"
               params={{ slug: p.slug }}
-              className="group rounded-2xl border border-border bg-card p-3 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg"
+              className="group block h-full rounded-2xl border border-border bg-card p-3 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20"
             >
-              <img
-                src={p.image}
-                alt={p.name}
-                loading="lazy"
-                width={1200}
-                height={900}
-                className="aspect-[4/3] w-full rounded-xl object-cover"
-              />
+              <div className="overflow-hidden rounded-xl">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  loading="lazy"
+                  width={1200}
+                  height={900}
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                />
+              </div>
               <div className="p-4">
                 <h3 className="text-lg">{p.name}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.tagline}</p>
               </div>
             </Link>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className="mx-auto w-[min(92%,1180px)] py-12">
-        <h2 className="text-3xl">What I do</h2>
+        <Reveal from="up">
+          <h2 className="text-3xl">What I do</h2>
+        </Reveal>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {services.map((s) => (
-            <div key={s.title} className="rounded-2xl border border-border bg-card p-7">
-              <h3 className="text-lg">{s.title}</h3>
-              <p className="mt-3 text-sm text-muted-foreground">{s.copy}</p>
-            </div>
+          {services.map((s, i) => (
+            <Reveal key={s.title} from="up" delay={i * 120}>
+              <div className="h-full rounded-2xl border border-border bg-card p-7 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10">
+                <h3 className="text-lg">{s.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground">{s.copy}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
+import { Reveal } from "@/components/site/Reveal";
 import { services } from "@/lib/portfolio-data";
 
 const title = "Services — UI/UX, Frontend & Graphic Design";
@@ -29,8 +30,9 @@ function Services() {
       />
 
       <section className="mx-auto grid w-[min(92%,1180px)] gap-6 py-8 md:grid-cols-3">
-        {services.map((s) => (
-          <div key={s.title} className="rounded-3xl border border-border bg-card p-8">
+        {services.map((s, i) => (
+          <Reveal key={s.title} from="up" delay={i * 120} className="h-full">
+          <div className="h-full rounded-3xl border border-border bg-card p-8 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15">
             <h2 className="text-xl">{s.title}</h2>
             <p className="mt-3 text-muted-foreground">{s.copy}</p>
             <ul className="mt-6 space-y-3">
@@ -42,10 +44,12 @@ function Services() {
               ))}
             </ul>
           </div>
+          </Reveal>
         ))}
       </section>
 
       <section className="mx-auto w-[min(92%,1180px)] py-10">
+        <Reveal from="up">
         <div className="flex flex-wrap items-center justify-between gap-6 rounded-3xl border border-border bg-accent/50 p-10">
           <div>
             <h2 className="text-2xl">Have a project in mind?</h2>
@@ -60,6 +64,7 @@ function Services() {
             Start a conversation
           </Link>
         </div>
+        </Reveal>
       </section>
     </>
   );

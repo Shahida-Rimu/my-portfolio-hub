@@ -134,7 +134,7 @@ function Index() {
             </Link>
           </div>
         </Reveal>
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => (
             <Reveal key={p.slug} from="up" delay={i * 120}>
             <Link
@@ -142,14 +142,14 @@ function Index() {
               params={{ slug: p.slug }}
               className="group block h-full rounded-2xl border border-border bg-card p-3 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20"
             >
-              <div className="overflow-hidden rounded-xl">
+              <div className="overflow-hidden rounded-xl bg-accent">
                 <img
                   src={p.image}
                   alt={p.name}
                   loading="lazy"
                   width={1200}
                   height={900}
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                  className={`aspect-[4/3] w-full transition-transform duration-500 ease-in-out group-hover:scale-110 ${p.fit === "contain" ? "object-contain p-4" : "object-cover"}`}
                 />
               </div>
               <div className="p-4">

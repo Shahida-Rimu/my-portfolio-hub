@@ -39,9 +39,9 @@ function Contact() {
         copy="Share a few details about your project or role and I'll reply as soon as I can."
       />
 
-      <section className="mx-auto grid w-[min(92%,1180px)] gap-10 py-8 md:grid-cols-[1.2fr_1fr]">
+      <section className="mx-auto grid w-[min(92%,1180px)] grid-cols-1 gap-8 py-8 lg:grid-cols-2">
         <form
-          className="rounded-3xl border border-border bg-card p-8"
+          className="w-full rounded-3xl border border-border bg-card p-6 sm:p-8"
           onSubmit={(e) => {
             e.preventDefault();
             const form = e.currentTarget;
@@ -59,7 +59,7 @@ function Contact() {
               <input
                 name="name"
                 required
-                className="rounded-xl border border-input bg-background px-4 py-3 text-base font-normal outline-none focus:ring-2 focus:ring-ring"
+                className="w-full rounded-xl border border-input bg-background px-4 py-3 text-base font-normal outline-none focus:ring-2 focus:ring-ring"
               />
             </label>
             <label className="grid gap-2 text-sm font-medium">
@@ -68,7 +68,7 @@ function Contact() {
                 name="email"
                 type="email"
                 required
-                className="rounded-xl border border-input bg-background px-4 py-3 text-base font-normal outline-none focus:ring-2 focus:ring-ring"
+                className="w-full rounded-xl border border-input bg-background px-4 py-3 text-base font-normal outline-none focus:ring-2 focus:ring-ring"
               />
             </label>
             <label className="grid gap-2 text-sm font-medium">
@@ -77,7 +77,7 @@ function Contact() {
                 name="message"
                 required
                 rows={5}
-                className="rounded-xl border border-input bg-background px-4 py-3 text-base font-normal outline-none focus:ring-2 focus:ring-ring"
+                className="w-full rounded-xl border border-input bg-background px-4 py-3 text-base font-normal outline-none focus:ring-2 focus:ring-ring"
               />
             </label>
             <button
@@ -94,19 +94,19 @@ function Contact() {
           </div>
         </form>
 
-        <div className="grid content-start gap-4">
+        <div className="grid w-full content-start gap-4">
           {details.map((d) => (
             <a
               key={d.label}
               href={d.href}
-              target={d.href.startsWith("http") ? "_blank" : undefined}
-              rel="noreferrer"
-              className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/60"
+              target={d.external ? "_blank" : undefined}
+              rel={d.external ? "noopener noreferrer" : undefined}
+              className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:border-primary/60 hover:shadow-lg hover:shadow-primary/10"
             >
-              <span className="flex size-10 items-center justify-center rounded-full bg-accent text-accent-foreground">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
                 <d.icon className="size-4" />
               </span>
-              <span className="text-sm break-all">{d.label}</span>
+              <span className="min-w-0 text-sm break-all">{d.label}</span>
             </a>
           ))}
         </div>

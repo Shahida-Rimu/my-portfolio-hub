@@ -167,16 +167,16 @@ export const timeline = [
     copy: "Selected for an intensive online IT program covering modern product development and AI-assisted design workflows.",
   },
   {
-    period: "2024 — Present",
-    title: "Executive, Art & Creative Design Team",
+    period: "MAR 2024 — JUN 2025",
+    title: "Former Executive, Art & Creative Design Team",
     org: "UITS Computer Club",
-    copy: "Lead promotional design for club events, from posters and social campaigns to on-stage visuals.",
+    copy: "Created visually engaging content, including posters, banners, and social media graphics, to enhance the club's branding. Collaborated with a creative team to support events, workshops, and community initiatives through effective design and digital media.",
   },
   {
-    period: "Sep 2022 — Present",
+    period: "SEP 2022 — 2026",
     title: "BSc in Computer Science & Engineering",
     org: "University of Information Technology and Sciences",
-    copy: "Final-year student focused on human-centered design, design thinking and frontend engineering.",
+    copy: "Graduated with a focus on human-centered design, design thinking and frontend engineering.",
   },
 ];
 

@@ -11,6 +11,7 @@ type Award = {
   title: string;
   subtitle: string;
   image?: string;
+  certificateImage?: string;
   link?: { label: string; href: string };
 };
 
@@ -33,7 +34,7 @@ const awards: Award[] = [
   {
     title: "Semi-Finalist",
     subtitle: "Undergraduate Startup Challenge 2025 hosted by BRAC University",
-    image: certificate.url,
+    certificateImage: certificate.url,
     link: { label: "View Certificate", href: "#" },
   },
 ];

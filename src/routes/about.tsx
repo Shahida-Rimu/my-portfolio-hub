@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
+import { Awards } from "@/components/site/Awards";
 import { timeline } from "@/lib/portfolio-data";
 
 const title = "About — Shahida Akter Rimu";
@@ -63,6 +64,8 @@ function About() {
           ))}
         </ol>
       </section>
+
+      <Awards />
     </>
   );
 }

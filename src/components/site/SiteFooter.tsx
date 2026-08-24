@@ -24,11 +24,14 @@ export function SiteFooter() {
           <a href={`tel:${contact.phone}`} className="transition-colors hover:text-foreground">
             {contact.phone}
           </a>
-          <a href={contact.linkedin} target="_blank" rel="noreferrer" className="transition-colors hover:text-foreground">
+          <a href="https://www.linkedin.com/in/shahida-akter-rimu-4b9033350" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground">
             LinkedIn
           </a>
-          <a href={contact.behance} target="_blank" rel="noreferrer" className="transition-colors hover:text-foreground">
+          <a href="https://www.behance.net/shahidarimu" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground">
             Behance
+          </a>
+          <a href="https://github.com/Shahida-Rimu" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground">
+            GitHub
           </a>
         </div>
       </div>

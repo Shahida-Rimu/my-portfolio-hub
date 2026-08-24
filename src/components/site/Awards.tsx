@@ -5,11 +5,13 @@ import { Reveal } from "@/components/site/Reveal";
 import kaist from "@/assets/award-kaist.png.asset.json";
 import ddiexpo from "@/assets/award-ddiexpo.jpg.asset.json";
 import hult from "@/assets/award-hult.jpg.asset.json";
+import certificate from "@/assets/certificate-undergrad-startup.jpg.asset.json";
 
 type Award = {
   title: string;
   subtitle: string;
   image?: string;
+  certificateImage?: string;
   link?: { label: string; href: string };
 };
 
@@ -32,7 +34,8 @@ const awards: Award[] = [
   {
     title: "Semi-Finalist",
     subtitle: "Undergraduate Startup Challenge 2025 hosted by BRAC University",
-    link: { label: "View Certificate", href: "https://example.com/certificate" },
+    certificateImage: certificate.url,
+    link: { label: "View Certificate", href: "#" },
   },
 ];
 
@@ -73,15 +76,26 @@ export function Awards() {
                 <h3 className="text-lg">{a.title}</h3>
                 <p className="mt-2 text-muted-foreground">{a.subtitle}</p>
                 {a.link && (
-                  <a
-                    href={a.link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-opacity hover:opacity-75"
-                  >
-                    {a.link.label}
-                    <ExternalLink className="size-3.5" />
-                  </a>
+                  a.image ? (
+                    <button
+                      type="button"
+                      onClick={() => setActive(a)}
+                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-opacity hover:opacity-75"
+                    >
+                      {a.link.label}
+                      <ExternalLink className="size-3.5" />
+                    </button>
+                  ) : (
+                    <a
+                      href={a.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-opacity hover:opacity-75"
+                    >
+                      {a.link.label}
+                      <ExternalLink className="size-3.5" />
+                    </a>
+                  )
                 )}
               </div>
             </article>

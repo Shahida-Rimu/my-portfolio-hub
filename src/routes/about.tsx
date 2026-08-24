@@ -63,6 +63,8 @@ function About() {
           ))}
         </ol>
       </section>
+
+      <Awards />
     </>
   );
 }

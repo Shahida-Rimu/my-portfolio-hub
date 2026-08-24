@@ -75,15 +75,26 @@ export function Awards() {
                 <h3 className="text-lg">{a.title}</h3>
                 <p className="mt-2 text-muted-foreground">{a.subtitle}</p>
                 {a.link && (
-                  <a
-                    href={a.link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-opacity hover:opacity-75"
-                  >
-                    {a.link.label}
-                    <ExternalLink className="size-3.5" />
-                  </a>
+                  a.image ? (
+                    <button
+                      type="button"
+                      onClick={() => setActive(a)}
+                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-opacity hover:opacity-75"
+                    >
+                      {a.link.label}
+                      <ExternalLink className="size-3.5" />
+                    </button>
+                  ) : (
+                    <a
+                      href={a.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-opacity hover:opacity-75"
+                    >
+                      {a.link.label}
+                      <ExternalLink className="size-3.5" />
+                    </a>
+                  )
                 )}
               </div>
             </article>

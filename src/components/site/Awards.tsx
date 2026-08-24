@@ -5,6 +5,7 @@ import { Reveal } from "@/components/site/Reveal";
 import kaist from "@/assets/award-kaist.png.asset.json";
 import ddiexpo from "@/assets/award-ddiexpo.jpg.asset.json";
 import hult from "@/assets/award-hult.jpg.asset.json";
+import certificate from "@/assets/certificate-undergrad-startup.jpg.asset.json";
 
 type Award = {
   title: string;
@@ -32,7 +33,8 @@ const awards: Award[] = [
   {
     title: "Semi-Finalist",
     subtitle: "Undergraduate Startup Challenge 2025 hosted by BRAC University",
-    link: { label: "View Certificate", href: "https://example.com/certificate" },
+    image: certificate.url,
+    link: { label: "View Certificate", href: "#" },
   },
 ];
 

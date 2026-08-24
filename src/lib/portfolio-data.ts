@@ -161,6 +161,12 @@ export const services = [
 
 export const timeline = [
   {
+    period: "JUL 2026 — PRESENT",
+    title: "IT & Graphics Intern",
+    org: "Vacancy Hunting",
+    copy: "Design structured visual assets, layouts, and promotional materials utilizing Figma and Canva. Manage official online accounts to drive digital engagement and ensure consistent brand identity.",
+  },
+  {
     period: "Jul 2026 — Aug 2026",
     title: "Trainee, 2026 WFK IT Online Training Program",
     org: "KAIST",

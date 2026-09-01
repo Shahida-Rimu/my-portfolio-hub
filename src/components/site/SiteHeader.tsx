@@ -42,7 +42,7 @@ export function SiteHeader() {
             <Link
               key={l.label}
               to={l.to}
-              hash={l.hash}
+              {...(l.hash ? { hash: l.hash } : {})}
               activeOptions={{ exact: l.to === "/", includeHash: true }}
               activeProps={{ className: "text-primary" }}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
@@ -80,7 +80,7 @@ export function SiteHeader() {
               <Link
                 key={l.label}
                 to={l.to}
-                hash={l.hash}
+                {...(l.hash ? { hash: l.hash } : {})}
                 onClick={() => setOpen(false)}
                 activeOptions={{ exact: l.to === "/", includeHash: true }}
                 activeProps={{ className: "text-primary" }}

@@ -4,12 +4,13 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/portfolio", label: "Portfolio" },
-  { to: "/services", label: "Services" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", hash: undefined, label: "Home" },
+  { to: "/", hash: "about", label: "About" },
+  { to: "/", hash: "portfolio", label: "Portfolio" },
+  { to: "/", hash: "services", label: "Services" },
+  { to: "/contact", hash: undefined, label: "Contact" },
 ] as const;
+
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);

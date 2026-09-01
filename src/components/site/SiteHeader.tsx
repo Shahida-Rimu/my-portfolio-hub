@@ -4,12 +4,13 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/portfolio", label: "Portfolio" },
-  { to: "/services", label: "Services" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", hash: undefined, label: "Home" },
+  { to: "/", hash: "about", label: "About" },
+  { to: "/", hash: "portfolio", label: "Portfolio" },
+  { to: "/", hash: "services", label: "Services" },
+  { to: "/contact", hash: undefined, label: "Contact" },
 ] as const;
+
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -39,9 +40,10 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <Link
-              key={l.to}
+              key={l.label}
               to={l.to}
-              activeOptions={{ exact: l.to === "/" }}
+              {...(l.hash ? { hash: l.hash } : {})}
+              activeOptions={{ exact: l.to === "/", includeHash: true }}
               activeProps={{ className: "text-primary" }}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
@@ -49,6 +51,7 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
+
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
@@ -75,16 +78,18 @@ export function SiteHeader() {
           <div className="flex flex-col">
             {links.map((l) => (
               <Link
-                key={l.to}
+                key={l.label}
                 to={l.to}
+                {...(l.hash ? { hash: l.hash } : {})}
                 onClick={() => setOpen(false)}
-                activeOptions={{ exact: l.to === "/" }}
+                activeOptions={{ exact: l.to === "/", includeHash: true }}
                 activeProps={{ className: "text-primary" }}
                 className="py-3 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {l.label}
               </Link>
             ))}
+
           </div>
         </nav>
       )}

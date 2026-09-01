@@ -1,9 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Download } from "lucide-react";
 import portrait from "@/assets/rimu-portrait.png";
 import { Reveal } from "@/components/site/Reveal";
 import { TechMarquee } from "@/components/site/TechMarquee";
-import { projects, services } from "@/lib/portfolio-data";
+import { SectionHeader } from "@/components/site/SectionHeader";
+import { Awards } from "@/components/site/Awards";
+import { projects, services, timeline } from "@/lib/portfolio-data";
+
 
 const title = "Shahida Akter Rimu — UI/UX Designer & Frontend Developer";
 const description =
@@ -134,59 +137,150 @@ function Index() {
 
       <TechMarquee />
 
-      <section className="mx-auto w-[min(92%,1180px)] py-12">
+      <section id="about" className="scroll-mt-28 py-20 md:py-24">
+        <SectionHeader
+          eyebrow="About me"
+          title="Design thinking, applied to real problems"
+          copy="I'm Shahida Akter Rimu, a Computer Science & Engineering graduate from the University of Information Technology and Sciences."
+        />
 
-        <Reveal from="up">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="text-3xl">Selected work</h2>
-            <Link to="/portfolio" className="text-sm font-medium text-primary hover:underline">
-              All projects
-            </Link>
-          </div>
-        </Reveal>
-        <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid w-[min(92%,1180px)] gap-10 md:grid-cols-2">
+          <Reveal from="up">
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              My work sits between design and engineering. I enjoy the research part — talking to
+              people, mapping their journeys and finding where a product quietly frustrates them — as
+              much as the craft of shaping a clean, accessible interface in Figma and then building it.
+            </p>
+          </Reveal>
+          <Reveal from="up" delay={150}>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              I thrive in collaborative teams, where feedback moves fast and decisions are made
+              together. Design thinking is my default process: understand, define, ideate, prototype
+              and test, so every screen I ship is grounded in a real user need rather than a guess.
+            </p>
+          </Reveal>
+        </div>
+
+        <div className="mx-auto w-[min(92%,1180px)] pt-16">
+          <Reveal from="up">
+            <h3 className="text-3xl">Education & experience</h3>
+          </Reveal>
+          <ol className="mt-10 border-l border-border">
+            {timeline.map((t, i) => (
+              <Reveal
+                key={t.title}
+                as="li"
+                from="up"
+                delay={i * 150}
+                className="relative block pb-10 pl-8 last:pb-0"
+              >
+                <span className="absolute -left-[5px] top-2 size-2.5 rounded-full bg-primary" />
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+                  {t.period}
+                </p>
+                <h4 className="font-display mt-2 text-lg">{t.title}</h4>
+                <p className="text-sm font-medium text-foreground/80">{t.org}</p>
+                <p className="mt-2 max-w-2xl text-muted-foreground">{t.copy}</p>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+
+        <Awards />
+      </section>
+
+      <section id="portfolio" className="scroll-mt-28 py-20 md:py-24">
+        <SectionHeader
+          eyebrow="Portfolio"
+          title="Projects & case studies"
+          copy="A selection of product and interface work — each with the problem, the approach and the design decisions behind it."
+        />
+        <div className="mx-auto grid w-[min(92%,1180px)] gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => (
             <Reveal key={p.slug} from="up" delay={i * 120}>
-            <Link
-              to="/portfolio/$slug"
-              params={{ slug: p.slug }}
-              className="group block h-full rounded-2xl border border-border bg-card p-3 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20"
-            >
-              <div className="overflow-hidden rounded-xl bg-accent">
-                <img
-                  src={p.image}
-                  alt={p.name}
-                  loading="lazy"
-                  width={1200}
-                  height={900}
-                  className={`aspect-[4/3] w-full transition-transform duration-500 ease-in-out group-hover:scale-110 ${p.fit === "contain" ? "object-contain p-4" : "object-cover"}`}
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg">{p.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{p.tagline}</p>
-              </div>
-            </Link>
+              <Link
+                to="/portfolio/$slug"
+                params={{ slug: p.slug }}
+                className="group block h-full rounded-3xl border border-border bg-card p-4 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20"
+              >
+                <div className="overflow-hidden rounded-2xl bg-accent">
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    loading="lazy"
+                    width={1200}
+                    height={900}
+                    className={`aspect-[4/3] w-full transition-transform duration-500 ease-in-out group-hover:scale-110 ${p.fit === "contain" ? "object-contain p-4" : "object-cover"}`}
+                  />
+                </div>
+                <div className="p-5">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="text-xl">{p.name}</h3>
+                    <ArrowUpRight className="mt-1 size-5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
+                  </div>
+                  <p className="mt-2 text-muted-foreground">{p.tagline}</p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {p.tags.map((t) => (
+                      <li
+                        key={t}
+                        className="rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Link>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto w-[min(92%,1180px)] py-12">
-        <Reveal from="up">
-          <h2 className="text-3xl">What I do</h2>
-        </Reveal>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+      <section id="services" className="scroll-mt-28 py-20 md:py-24">
+        <SectionHeader
+          eyebrow="Services"
+          title="How I can help"
+          copy="From first wireframe to shipped interface — design and frontend work with accessibility built in."
+        />
+        <div className="mx-auto grid w-[min(92%,1180px)] gap-6 md:grid-cols-3">
           {services.map((s, i) => (
-            <Reveal key={s.title} from="up" delay={i * 120}>
-              <div className="h-full rounded-2xl border border-border bg-card p-7 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10">
-                <h3 className="text-lg">{s.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground">{s.copy}</p>
+            <Reveal key={s.title} from="up" delay={i * 120} className="h-full">
+              <div className="h-full rounded-3xl border border-border bg-card p-8 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15">
+                <h3 className="text-xl">{s.title}</h3>
+                <p className="mt-3 text-muted-foreground">{s.copy}</p>
+                <ul className="mt-6 space-y-3">
+                  {s.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm">
+                      <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
           ))}
         </div>
+
+        <div className="mx-auto w-[min(92%,1180px)] pt-16">
+          <Reveal from="up">
+            <div className="flex flex-wrap items-center justify-between gap-6 rounded-3xl border border-border bg-accent/50 p-10">
+              <div>
+                <h3 className="text-2xl">Have a project in mind?</h3>
+                <p className="mt-2 text-muted-foreground">
+                  Tell me about it — I'll get back to you within a day.
+                </p>
+              </div>
+              <Link
+                to="/contact"
+                className="rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Start a conversation
+              </Link>
+            </div>
+          </Reveal>
+        </div>
       </section>
+
     </>
   );
 }

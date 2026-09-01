@@ -26,7 +26,7 @@ function About() {
       <PageHeader
         eyebrow="About me"
         title="Design thinking, applied to real problems"
-        copy="I'm Shahida Akter Rimu, a Computer Science & Engineering graduate from the University of Information Technology and Sciences."
+        copy="I'm Shahida Akter Rimu, a Professional UX/UI Designer & WordPress Expert building intuitive, accessible digital experiences."
       />
 
       <section className="mx-auto grid w-[min(92%,1180px)] gap-10 py-8 md:grid-cols-2">

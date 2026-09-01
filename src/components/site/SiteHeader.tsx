@@ -78,16 +78,18 @@ export function SiteHeader() {
           <div className="flex flex-col">
             {links.map((l) => (
               <Link
-                key={l.to}
+                key={l.label}
                 to={l.to}
+                hash={l.hash}
                 onClick={() => setOpen(false)}
-                activeOptions={{ exact: l.to === "/" }}
+                activeOptions={{ exact: l.to === "/", includeHash: true }}
                 activeProps={{ className: "text-primary" }}
                 className="py-3 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {l.label}
               </Link>
             ))}
+
           </div>
         </nav>
       )}

@@ -21,9 +21,6 @@ export function SiteFooter() {
           <a href={`mailto:${contact.email}`} className="transition-colors hover:text-foreground">
             {contact.email}
           </a>
-          <a href={`tel:${contact.phone}`} className="transition-colors hover:text-foreground">
-            {contact.phone}
-          </a>
           <a href="https://www.linkedin.com/in/shahida-akter-rimu-4b9033350" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground">
             LinkedIn
           </a>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, Phone, Linkedin, Palette, Github } from "lucide-react";
+import { Mail, Linkedin, Palette, Github } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
 import { contact } from "@/lib/portfolio-data";
 
@@ -22,7 +22,6 @@ export const Route = createFileRoute("/contact")({
 
 const details = [
   { icon: Mail, label: contact.email, href: `mailto:${contact.email}` },
-  { icon: Phone, label: contact.phone, href: `tel:${contact.phone}` },
   { icon: Linkedin, label: contact.linkedinLabel, href: "https://www.linkedin.com/in/shahida-akter-rimu-4b9033350", external: true },
   { icon: Palette, label: contact.behanceLabel, href: "https://www.behance.net/shahidarimu", external: true },
   { icon: Github, label: "Shahida-Rimu", href: "https://github.com/Shahida-Rimu", external: true },

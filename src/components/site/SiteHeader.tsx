@@ -40,9 +40,10 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <Link
-              key={l.to}
+              key={l.label}
               to={l.to}
-              activeOptions={{ exact: l.to === "/" }}
+              hash={l.hash}
+              activeOptions={{ exact: l.to === "/", includeHash: true }}
               activeProps={{ className: "text-primary" }}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
@@ -50,6 +51,7 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
+
 
         <div className="flex items-center gap-2">
           <ThemeToggle />

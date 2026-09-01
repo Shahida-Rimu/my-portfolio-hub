@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, Phone, Linkedin, Palette, Github } from "lucide-react";
+import { Mail, Linkedin, Palette, Github } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
 import { contact } from "@/lib/portfolio-data";
 

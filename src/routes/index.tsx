@@ -84,9 +84,10 @@ function Index() {
                 Contact me
               </Link>
               <a
-                href="/resume.pdf"
+                href="/Rimu_CV.pdf.pdf"
                 target="_blank"
-                download
+                rel="noopener noreferrer"
+                download="Shahida_Akter_Rimu_Resume.pdf"
                 className="inline-flex items-center gap-2 rounded-full border border-primary bg-transparent px-6 py-3.5 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:bg-primary/10 hover:text-primary"
               >
                 Download Resume

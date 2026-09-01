@@ -1,9 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Download } from "lucide-react";
 import portrait from "@/assets/rimu-portrait.png";
 import { Reveal } from "@/components/site/Reveal";
 import { TechMarquee } from "@/components/site/TechMarquee";
-import { projects, services } from "@/lib/portfolio-data";
+import { SectionHeader } from "@/components/site/SectionHeader";
+import { Awards } from "@/components/site/Awards";
+import { projects, services, timeline } from "@/lib/portfolio-data";
+
 
 const title = "Shahida Akter Rimu — UI/UX Designer & Frontend Developer";
 const description =

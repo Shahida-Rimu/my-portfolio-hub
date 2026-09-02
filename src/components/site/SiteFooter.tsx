@@ -21,7 +21,7 @@ export function SiteFooter() {
           <a href={`mailto:${contact.email}`} className="transition-colors hover:text-foreground">
             {contact.email}
           </a>
-          <a href="https://www.linkedin.com/in/shahida-akter-rimu-4b9033350" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground">
+          <a href="https://www.linkedin.com/in/shahida-akter-rimu-4b9033350/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground">
             LinkedIn
           </a>
           <a href="https://www.behance.net/shahidarimu" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground">

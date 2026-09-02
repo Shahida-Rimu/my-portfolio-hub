@@ -22,7 +22,7 @@ export const Route = createFileRoute("/contact")({
 
 const details = [
   { icon: Mail, label: contact.email, href: `mailto:${contact.email}` },
-  { icon: Linkedin, label: contact.linkedinLabel, href: "https://www.linkedin.com/in/shahida-akter-rimu-4b9033350", external: true },
+  { icon: Linkedin, label: contact.linkedinLabel, href: "https://www.linkedin.com/in/shahida-akter-rimu-4b9033350/", external: true },
   { icon: Palette, label: contact.behanceLabel, href: "https://www.behance.net/shahidarimu", external: true },
   { icon: Github, label: "Shahida-Rimu", href: "https://github.com/Shahida-Rimu", external: true },
 ];

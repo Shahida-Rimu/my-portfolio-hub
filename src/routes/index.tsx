@@ -242,7 +242,7 @@ function Index() {
           title="How I can help"
           copy="From first wireframe to shipped interface — design and frontend work with accessibility built in."
         />
-        <div className="mx-auto grid w-[min(92%,1180px)] gap-6 md:grid-cols-2">
+        <div className="mx-auto grid w-[min(92%,1180px)] gap-8 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.title} from="up" delay={i * 120} className="h-full">
               <div className="h-full rounded-3xl border border-border bg-card p-8 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15">

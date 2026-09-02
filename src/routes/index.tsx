@@ -52,7 +52,7 @@ function Index() {
             <Reveal from="up" delay={120}>
             <h1 className="mt-7 text-[clamp(2.4rem,6.2vw,4.15rem)] leading-[1.02]">
               Building{" "}
-              <span className="bg-gradient-to-r from-primary to-foreground bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-accent to-foreground bg-clip-text text-transparent">
                 intuitive & accessible
               </span>{" "}
               digital experiences

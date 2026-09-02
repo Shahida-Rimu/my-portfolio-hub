@@ -148,19 +148,14 @@ export const services = [
     items: ["User flows & wireframes", "Interactive Figma prototypes", "Design systems", "Usability & accessibility reviews"],
   },
   {
-    title: "Frontend Development",
-    copy: "Turning designs into responsive, accessible interfaces that hold up on every screen size.",
-    items: ["HTML & CSS", "React.js components", "Responsive layouts", "Design-to-code handoff"],
+    title: "WordPress Development",
+    copy: "Developing custom, scalable, and easy-to-manage WordPress websites optimized for performance and SEO.",
+    items: ["Custom theme development", "Plugin integration & setup", "SEO & performance optimization", "Content management systems"],
   },
   {
     title: "Graphic Design",
     copy: "Promotional designs and social content that keep a brand consistent and recognisable.",
     items: ["Social media creatives", "Posters & event branding", "Canva & Photoshop", "Illustrator artwork"],
-  },
-  {
-    title: "WordPress Development",
-    copy: "Developing custom, scalable, and easy-to-manage WordPress websites optimized for performance and SEO.",
-    items: ["Custom theme development", "Plugin integration & setup", "SEO & performance optimization", "Content management systems"],
   },
 ];
 

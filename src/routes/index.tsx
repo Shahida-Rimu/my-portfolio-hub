@@ -46,7 +46,7 @@ function Index() {
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-70" />
                 <span className="relative inline-flex size-1.5 rounded-full bg-primary" />
               </span>
-              Professional UX/UI Designer & WordPress Expert
+              AVAILABLE FOR JOBS & FREELANCE
             </span>
             </Reveal>
             <Reveal from="up" delay={120}>
@@ -61,8 +61,8 @@ function Index() {
             <Reveal from="up" delay={220}>
             <ul className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3">
               {[
-                "Professional UX/UI Designer & WordPress Expert",
-                "Based in Bangladesh",
+                "PROFESSIONAL UX/UI DESIGNER & WORDPRESS EXPERT",
+                "BASED IN BANGLADESH",
               ].map((label) => (
                 <li
                   key={label}

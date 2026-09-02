@@ -52,7 +52,7 @@ function Index() {
             <Reveal from="up" delay={120}>
             <h1 className="mt-7 text-[clamp(2.4rem,6.2vw,4.15rem)] leading-[1.02]">
               Building{" "}
-              <span className="bg-gradient-to-r from-primary to-foreground bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-accent to-foreground bg-clip-text text-transparent">
                 intuitive & accessible
               </span>{" "}
               digital experiences
@@ -60,7 +60,10 @@ function Index() {
             </Reveal>
             <Reveal from="up" delay={220}>
             <ul className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3">
-              {["UI/UX Designer", "Based in Bangladesh"].map((label) => (
+              {[
+                "Professional UX/UI Designer & WordPress Expert",
+                "Based in Bangladesh",
+              ].map((label) => (
                 <li
                   key={label}
                   className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/80 sm:text-sm"
@@ -102,7 +105,7 @@ function Index() {
               {[
                 { k: "10+", v: "Projects" },
                 { k: "2026", v: "KAIST WFK trainee" },
-                { k: "UI/UX", v: "Design & frontend" },
+                { k: "UX/UI & WP", v: "Design & development" },
               ].map((s, i) => (
                 <Reveal key={s.v} from="up" delay={420 + i * 100}>
                   <dt className="font-display text-2xl text-foreground">{s.k}</dt>
@@ -111,7 +114,7 @@ function Index() {
               ))}
             </dl>
           </div>
-          <Reveal from="scale" delay={200} className="relative mx-auto w-full max-w-md">
+          <Reveal from="scale" delay={200} className="relative mx-auto w-full max-w-md animate-float">
             <div
               aria-hidden
               className="absolute -inset-3 -z-10 rounded-[2.5rem] bg-gradient-to-br from-primary/40 via-accent to-transparent blur-xl"
@@ -128,8 +131,8 @@ function Index() {
               />
             </div>
             <div className="absolute -bottom-5 left-4 rounded-2xl border border-border bg-card px-5 py-3 shadow-lg">
-              <p className="font-display text-sm">Figma → React</p>
-              <p className="text-xs text-muted-foreground">Design to code handoff</p>
+              <p className="font-display text-sm">Figma → WordPress</p>
+              <p className="text-xs text-muted-foreground">Pixel-perfect web development</p>
             </div>
           </Reveal>
         </div>

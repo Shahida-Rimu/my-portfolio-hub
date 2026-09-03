@@ -36,12 +36,32 @@ function NotFoundComponent() {
   );
 }
 
+function isStaleChunkError(error: unknown) {
+  const message = error instanceof Error ? error.message : String(error);
+  return (
+    /Failed to fetch dynamically imported module/i.test(message) ||
+    /error loading dynamically imported module/i.test(message) ||
+    /Importing a module script failed/i.test(message)
+  );
+}
+
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
+    // A deploy replaces hashed chunk filenames, so an open tab requests a file
+    // that no longer exists. Reload once to pick up the new build.
+    if (isStaleChunkError(error) && typeof window !== "undefined") {
+      const key = "stale-chunk-reloaded";
+      if (!sessionStorage.getItem(key)) {
+        sessionStorage.setItem(key, "1");
+        window.location.reload();
+        return;
+      }
+    }
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
+
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">

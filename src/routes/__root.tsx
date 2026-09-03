@@ -162,6 +162,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
+        <Toaster position="bottom-right" />
       </div>
     </QueryClientProvider>
   );

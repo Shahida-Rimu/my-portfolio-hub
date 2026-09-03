@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Linkedin, Palette, Github } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 import { PageHeader } from "@/components/site/PageHeader";
 import { contact } from "@/lib/portfolio-data";
 
@@ -28,7 +30,30 @@ const details = [
 ];
 
 function Contact() {
-  const [sent, setSent] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    setLoading(true);
+
+    try {
+      await emailjs.sendForm(
+        "service_t81la7o",
+        "template_dtsimt2",
+        formRef.current,
+        { publicKey: "zrvchrzndiQatnTHw0AVD" },
+      );
+      toast.success("Message sent successfully!");
+      formRef.current.reset();
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -40,23 +65,16 @@ function Contact() {
 
       <section className="mx-auto grid w-[min(92%,1180px)] grid-cols-1 gap-8 py-8 lg:grid-cols-2">
         <form
+          ref={formRef}
           className="w-full rounded-3xl border border-border bg-card p-6 sm:p-8"
-          onSubmit={(e) => {
-            e.preventDefault();
-            const form = e.currentTarget;
-            const data = new FormData(form);
-            const body = `${data.get("message")}\n\n— ${data.get("name")} (${data.get("email")})`;
-            window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(
-              "Portfolio enquiry",
-            )}&body=${encodeURIComponent(String(body))}`;
-            setSent(true);
-          }}
+          onSubmit={handleSubmit}
         >
           <div className="grid gap-5">
+            <input type="hidden" name="to_name" value="Shahida Akter Rimu" />
             <label className="grid gap-2 text-sm font-medium">
               Name
               <input
-                name="name"
+                name="from_name"
                 required
                 className="w-full rounded-xl border border-input bg-background px-4 py-3 text-base font-normal outline-none focus:ring-2 focus:ring-ring"
               />
@@ -64,7 +82,7 @@ function Contact() {
             <label className="grid gap-2 text-sm font-medium">
               Email
               <input
-                name="email"
+                name="from_email"
                 type="email"
                 required
                 className="w-full rounded-xl border border-input bg-background px-4 py-3 text-base font-normal outline-none focus:ring-2 focus:ring-ring"
@@ -81,15 +99,11 @@ function Contact() {
             </label>
             <button
               type="submit"
-              className="justify-self-start rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              disabled={loading}
+              className="justify-self-start rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Send message
+              {loading ? "Sending..." : "Send message"}
             </button>
-            {sent && (
-              <p className="text-sm text-primary" role="status">
-                Your email app should open with the message ready to send.
-              </p>
-            )}
           </div>
         </form>
 

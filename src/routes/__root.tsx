@@ -146,6 +146,12 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    // App rendered fine, so allow a future stale-chunk reload again.
+    sessionStorage.removeItem("stale-chunk-reloaded");
+  }, []);
+
+
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col bg-background">

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Check, Download } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Download, Trophy } from "lucide-react";
 import portrait from "@/assets/rimu-portrait.png";
 import { Reveal } from "@/components/site/Reveal";
 import { TechMarquee } from "@/components/site/TechMarquee";
@@ -221,6 +221,64 @@ function Index() {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="scroll-mt-28 py-20 md:py-24">
+        <SectionHeader
+          eyebrow="Highlights"
+          title="Participations & Achievements"
+          copy="A few milestones from competitions, programs, and collaborative challenges."
+        />
+
+        <div className="mx-auto w-[min(92%,1180px)]">
+          <div className="grid gap-6 md:grid-cols-2">
+            {[
+              {
+                title: "Excellence Award Winner, 2026 Project Competition",
+                description:
+                  "Awarded during the 2026 WFK IT Online Training Program. Recognized as part of Batch 2 Team 7 for demonstrating the highest level of creativity, technical excellence, and innovation in the Final Project Competition.",
+              },
+              {
+                title: "Finalist, DDIEXPO 2026",
+                description:
+                  "Showcased 'AutoTrace AI', ranking Top 9 among 250 teams and earning recognition from the UITS IQAC Innovation Hub.",
+              },
+              {
+                title: "Finalist, Hult Prize at UITS",
+                description:
+                  "Competed with Team IQ Optional in the NextJobz innovation challenge.",
+              },
+              {
+                title: "Semi-Finalist, Undergraduate Startup Challenge 2025",
+                description:
+                  "Reached the semi-finals in the startup competition hosted by the BRAC University Entrepreneurship Development Forum (BUEDF) with Team IQ Optional.",
+              },
+            ].map((a, i) => (
+              <Reveal
+                key={a.title}
+                from="up"
+                delay={i * 120}
+                className="h-full"
+              >
+                <div className="group h-full rounded-2xl border border-border bg-card/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
+                  <div className="flex items-start gap-4">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                      <Trophy className="size-5" />
+                    </span>
+                    <div>
+                      <h4 className="font-display text-lg transition-colors group-hover:text-primary">
+                        {a.title}
+                      </h4>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {a.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>

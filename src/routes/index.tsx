@@ -4,7 +4,7 @@ import portrait from "@/assets/rimu-portrait.png";
 import { Reveal } from "@/components/site/Reveal";
 import { TechMarquee } from "@/components/site/TechMarquee";
 import { SectionHeader } from "@/components/site/SectionHeader";
-import { Awards } from "@/components/site/Awards";
+
 import { projects, services, timeline } from "@/lib/portfolio-data";
 
 
@@ -189,7 +189,7 @@ function Index() {
           </ol>
         </div>
 
-        <Awards />
+        
       </section>
 
       <section id="portfolio" className="scroll-mt-28 py-20 md:py-24">

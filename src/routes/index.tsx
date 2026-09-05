@@ -147,49 +147,82 @@ function Index() {
           copy="I'm Shahida Akter Rimu, a Professional UX/UI Designer & WordPress Expert building intuitive, accessible digital experiences."
         />
 
-        <div className="mx-auto grid w-[min(92%,1180px)] gap-10 md:grid-cols-2">
-          <Reveal from="up">
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              My work sits between design and engineering. I enjoy the research part — talking to
-              people, mapping their journeys and finding where a product quietly frustrates them — as
-              much as the craft of shaping a clean, accessible interface in Figma and then building it.
-            </p>
-          </Reveal>
-          <Reveal from="up" delay={150}>
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              I thrive in collaborative teams, where feedback moves fast and decisions are made
-              together. Design thinking is my default process: understand, define, ideate, prototype
-              and test, so every screen I ship is grounded in a real user need rather than a guess.
-            </p>
+        <div className="mx-auto grid w-[min(92%,1180px)] items-center gap-16 lg:grid-cols-2">
+          <div className="space-y-6">
+            <Reveal from="up">
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                My work sits between design and engineering. I enjoy the research part — talking to
+                people, mapping their journeys and finding where a product quietly frustrates them — as
+                much as the craft of shaping a clean, accessible interface in Figma and then building it.
+              </p>
+            </Reveal>
+            <Reveal from="up" delay={150}>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                I thrive in collaborative teams, where feedback moves fast and decisions are made
+                together. Design thinking is my default process: understand, define, ideate, prototype
+                and test, so every screen I ship is grounded in a real user need rather than a guess.
+              </p>
+            </Reveal>
+          </div>
+
+          <Reveal from="up" delay={200}>
+            <div className="relative flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+              {[
+                { label: "UI/UX Design", dot: "bg-primary" },
+                { label: "WordPress", dot: "bg-accent" },
+                { label: "Figma", dot: "bg-chart-3" },
+                { label: "React", dot: "bg-chart-2" },
+                { label: "Canva", dot: "bg-chart-5" },
+                { label: "Machine Learning", dot: "bg-chart-4" },
+              ].map((skill, i) => (
+                <div
+                  key={skill.label}
+                  className={`flex items-center gap-3 rounded-full border border-border bg-card/60 px-6 py-3 shadow-lg shadow-primary/5 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-primary/15 ${i % 2 === 1 ? "lg:translate-y-4" : i % 3 === 0 ? "lg:-translate-y-2" : ""}`}
+                >
+                  <span className={`size-2.5 rounded-full ${skill.dot}`} />
+                  <span className="font-medium text-foreground">{skill.label}</span>
+                </div>
+              ))}
+            </div>
           </Reveal>
         </div>
 
-        <div className="mx-auto w-[min(92%,1180px)] pt-16">
+        <div className="mx-auto w-[min(92%,1180px)] pt-24">
           <Reveal from="up">
-            <h3 className="text-3xl">Education & experience</h3>
+            <h3 className="text-center text-3xl">Education & experience</h3>
           </Reveal>
-          <ol className="mt-10 border-l border-border">
-            {timeline.map((t, i) => (
-              <Reveal
-                key={t.title}
-                as="li"
-                from="up"
-                delay={i * 150}
-                className="relative block pb-10 pl-8 last:pb-0"
-              >
-                <span className="absolute -left-[5px] top-2 size-2.5 rounded-full bg-primary" />
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-                  {t.period}
-                </p>
-                <h4 className="font-display mt-2 text-lg">{t.title}</h4>
-                <p className="text-sm font-medium text-foreground/80">{t.org}</p>
-                <p className="mt-2 max-w-2xl text-muted-foreground">{t.copy}</p>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
 
-        
+          <div className="relative mt-12 max-w-4xl">
+            <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
+
+            <div className="space-y-10">
+              {timeline.map((t, i) => (
+                <Reveal
+                  key={t.title}
+                  as="div"
+                  from="up"
+                  delay={i * 120}
+                  className="relative"
+                >
+                  <div className="absolute left-4 top-6 z-10 size-3 -translate-x-1/2 rounded-full border-2 border-background bg-primary ring-4 ring-primary/25" />
+
+                  <div className="group ml-10 rounded-2xl border border-border bg-card/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
+                    <span className="inline-block rounded-md bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
+                      {t.period}
+                    </span>
+                    <h4 className="font-display mt-4 text-lg transition-colors group-hover:text-primary">
+                      {t.title}
+                    </h4>
+                    <p className="text-sm font-medium text-foreground/80">{t.org}</p>
+                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                      {t.copy}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="portfolio" className="scroll-mt-28 py-20 md:py-24">

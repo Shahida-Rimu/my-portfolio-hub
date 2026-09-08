@@ -167,14 +167,14 @@ function Index() {
 
           <Reveal from="up" delay={200}>
             <div className="relative flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-              {[
-                { label: "UI/UX Design", dot: "bg-primary" },
-                { label: "WordPress", dot: "bg-accent" },
-                { label: "Figma", dot: "bg-chart-3" },
-                { label: "React", dot: "bg-chart-2" },
-                { label: "Canva", dot: "bg-chart-5" },
-                { label: "Machine Learning", dot: "bg-chart-4" },
-              ].map((skill, i) => (
+                {[
+                  { label: "UI/UX Design", dot: "bg-primary" },
+                  { label: "WordPress", dot: "bg-accent" },
+                  { label: "Figma", dot: "bg-chart-3" },
+                  { label: "React", dot: "bg-chart-2" },
+                  { label: "Canva", dot: "bg-chart-5" },
+                  { label: "HTML/CSS", dot: "bg-chart-4" },
+                ].map((skill, i) => (
                 <div
                   key={skill.label}
                   className={`flex items-center gap-3 rounded-full border border-border bg-card/60 px-6 py-3 shadow-lg shadow-primary/5 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-primary/15 ${i % 2 === 1 ? "lg:translate-y-4" : i % 3 === 0 ? "lg:-translate-y-2" : ""}`}

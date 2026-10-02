@@ -61,7 +61,7 @@ function Index() {
             <Reveal from="up" delay={220}>
             <ul className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3">
               {[
-                "PROFESSIONAL UX/UI DESIGNER & WORDPRESS EXPERT",
+                "PROFESSIONAL UX/UI & CMS DESIGNER",
                 "BASED IN BANGLADESH",
               ].map((label) => (
                 <li
@@ -105,7 +105,7 @@ function Index() {
               {[
                 { k: "10+", v: "Projects" },
                 { k: "2026", v: "KAIST WFK trainee" },
-                { k: "UX/UI & WP", v: "Design & development" },
+                { k: "UX/UI & CMS", v: "Design & development" },
               ].map((s, i) => (
                 <Reveal key={s.v} from="up" delay={420 + i * 100}>
                   <dt className="font-display text-2xl text-foreground">{s.k}</dt>
@@ -131,7 +131,7 @@ function Index() {
               />
             </div>
             <div className="absolute -bottom-5 left-4 rounded-2xl border border-border bg-card px-5 py-3 shadow-lg">
-              <p className="font-display text-sm">Figma → WordPress</p>
+              <p className="font-display text-sm">Figma → CMS</p>
               <p className="text-xs text-muted-foreground">Pixel-perfect web development</p>
             </div>
           </Reveal>
@@ -144,23 +144,18 @@ function Index() {
         <SectionHeader
           eyebrow="About me"
           title="Design thinking, applied to real problems"
-          copy="I'm Shahida Akter Rimu, a Professional UX/UI Designer & WordPress Expert building intuitive, accessible digital experiences."
+          copy="I'm Shahida Akter Rimu, a UI/UX & CMS Designer building intuitive, accessible digital experiences."
         />
 
         <div className="mx-auto grid w-[min(92%,1180px)] items-center gap-16 lg:grid-cols-2">
           <div className="space-y-6">
             <Reveal from="up">
               <p className="text-lg leading-relaxed text-muted-foreground">
-                My work sits between design and engineering. I enjoy the research part — talking to
-                people, mapping their journeys and finding where a product quietly frustrates them — as
-                much as the craft of shaping a clean, accessible interface in Figma and then building it.
-              </p>
-            </Reveal>
-            <Reveal from="up" delay={150}>
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                I thrive in collaborative teams, where feedback moves fast and decisions are made
-                together. Design thinking is my default process: understand, define, ideate, prototype
-                and test, so every screen I ship is grounded in a real user need rather than a guess.
+                I'm a UI/UX &amp; CMS Designer who believes in building digital experiences from
+                scratch. Coming from a Computer Science background, I naturally look at design
+                through both a creative and technical lens. I spend most of my time in Figma,
+                wireframing, building rapid prototypes, and experimenting with parallax animations
+                to make interfaces feel alive.
               </p>
             </Reveal>
           </div>

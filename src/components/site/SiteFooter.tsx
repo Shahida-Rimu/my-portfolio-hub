@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div>
           <p className="font-display text-lg font-semibold">Shahida Akter Rimu</p>
           <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-            Professional UX/UI Designer & WordPress Expert building intuitive, accessible digital experiences.
+            UI/UX & CMS Designer building intuitive, accessible digital experiences.
           </p>
         </div>
         <nav className="flex flex-col gap-2 text-sm text-muted-foreground">

@@ -104,14 +104,16 @@ function Index() {
               </a>
             </div>
             </Reveal>
-            <dl className="mt-12 grid max-w-2xl grid-cols-3 gap-6 border-t border-border pt-8">
+            <dl className="mt-12 grid max-w-full grid-cols-3 gap-3 border-t border-border pt-8 sm:max-w-2xl sm:gap-6">
               {[
                 { k: "10+", v: "Projects" },
                 { k: "2026", v: "KAIST WFK trainee" },
                 { k: "UX/UI & CMS", v: "Design & development" },
               ].map((s, i) => (
                 <Reveal key={s.v} from="up" delay={420 + i * 100}>
-                  <dt className="whitespace-nowrap font-display text-2xl text-foreground">{s.k}</dt>
+                  <dt className="whitespace-nowrap font-display text-base leading-tight text-foreground sm:text-xl lg:text-2xl">
+                    {s.k}
+                  </dt>
                   <dd className="mt-1 text-xs text-muted-foreground">{s.v}</dd>
                 </Reveal>
               ))}

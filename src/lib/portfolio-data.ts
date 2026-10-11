@@ -1,12 +1,6 @@
 import autotrace from "@/assets/project-autotrace.jpg";
 import transit from "@/assets/project-transit.jpg";
 import yutnori from "@/assets/project-yutnori.jpg";
-import flaxpay from "@/assets/Flaxpay_mockup.png.asset.json";
-import aniways from "@/assets/Anyway_mockup.jpg.asset.json";
-import nexiok from "@/assets/Nexiok_mockup.png.asset.json";
-import seiro from "@/assets/Seiro_mockup.png.asset.json";
-import gardnix from "@/assets/Gardnix_mockup.png.asset.json";
-import novera from "@/assets/Novera_studio_mockup.png.asset.json";
 
 export type Project = {
   slug: string;
@@ -77,7 +71,7 @@ export const projects: Project[] = [
     name: "FlaxPay",
     tagline: "A mobile wallet for clear, confident everyday payments",
     tags: ["Mobile UI", "Fintech"],
-    image: flaxpay.url,
+    image: "/Flaxpay mockup.png",
     fit: "contain",
     problem: "Mobile payment interfaces often overwhelm users with competing actions and unclear transaction feedback. This concept explores how a wallet can make balances, transfers and QR payments easier to understand without sacrificing a sense of security.",
     solution: "A focused mobile experience with a prominent balance, distinct send and receive actions, readable activity history and a guided QR scanning flow. A high-contrast visual system gives essential financial information a consistent hierarchy.",
@@ -93,7 +87,7 @@ export const projects: Project[] = [
     name: "Aniways",
     tagline: "An immersive storefront for anime collectibles and fandom culture",
     tags: ["Web UI", "E-commerce"],
-    image: aniways.url,
+    image: "/Anyway mockup.jpg",
     fit: "contain",
     problem: "Collectibles shoppers need to discover new releases quickly while comparing products across figures, manga and gaming categories. This concept addresses the tension between expressive fandom branding and a straightforward shopping experience.",
     solution: "A responsive storefront pairs bold character-led imagery with clear category navigation, featured drops and structured product discovery. Consistent product presentation and visible trust signals support a more confident path to purchase.",
@@ -109,7 +103,7 @@ export const projects: Project[] = [
     name: "Nexiok",
     tagline: "An approachable AI automation platform for growing businesses",
     tags: ["SaaS", "AI", "UI/UX"],
-    image: nexiok.url,
+    image: "/Nexiok mockup.png",
     fit: "contain",
     problem: "AI automation offerings can be difficult to evaluate when technical language obscures practical business benefits. This concept explores how prospective customers can understand capabilities, compare plans and identify a suitable starting point.",
     solution: "A structured SaaS website translates automation capabilities into clear service categories, supported by project examples, a focused FAQ and comparable pricing plans. Friendly visual cues make a technical product feel more accessible.",
@@ -125,7 +119,7 @@ export const projects: Project[] = [
     name: "Seiro",
     tagline: "A modern digital presence for next-generation AI solutions",
     tags: ["Web Design", "AI Solutions"],
-    image: seiro.url,
+    image: "/Seiro mockup.png",
     fit: "contain",
     problem: "AI consultancies must communicate complex capabilities while establishing credibility and helping visitors choose a relevant service. This concept explores a clearer presentation of integration, documentation and ongoing technical support.",
     solution: "A visually distinctive website combines a concise offer with a scannable service layout and clear contact pathways. Modular content blocks separate key capabilities so visitors can evaluate the offering without navigating dense technical copy.",
@@ -141,7 +135,7 @@ export const projects: Project[] = [
     name: "Gardnix",
     tagline: "A CMS-ready website for gardening and landscape services",
     tags: ["Web UI", "CMS"],
-    image: gardnix.url,
+    image: "/Gardnix mockup.png",
     fit: "contain",
     problem: "Landscaping businesses need to explain varied services, demonstrate their work and keep seasonal content current. This concept addresses how a service website can build trust while remaining straightforward for a non-technical team to maintain.",
     solution: "A nature-led website organizes services, project imagery, team profiles and customer feedback around a clear appointment pathway. Reusable CMS-oriented content patterns support consistent updates to projects and articles.",
@@ -157,7 +151,7 @@ export const projects: Project[] = [
     name: "Novera Studio",
     tagline: "A bold agency portfolio connecting creative craft with clear storytelling",
     tags: ["Agency", "UX"],
-    image: novera.url,
+    image: "/Novera studio mockup.png",
     fit: "contain",
     problem: "Creative agency websites can emphasize visual impact at the expense of service clarity and portfolio navigation. This concept explores how a distinctive studio identity can also help potential clients understand its expertise and start a conversation.",
     solution: "An editorial agency experience uses expressive typography, structured service listings, curated project imagery and a dedicated team presentation. A consistent hierarchy connects the studio’s personality with practical enquiry pathways.",

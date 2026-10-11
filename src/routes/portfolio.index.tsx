@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { ProjectToggle } from "@/components/site/ProjectToggle";
 import { ArrowUpRight } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
@@ -6,7 +8,7 @@ import { projects } from "@/lib/portfolio-data";
 
 const title = "Portfolio — Shahida Akter Rimu";
 const description =
-  "Case studies from AutoTrace AI, Kemne Jabo? and an interactive Yutnori cultural game — UI planning, prototyping and frontend work.";
+  "Explore Shahida Akter Rimu’s UI/UX and CMS projects, from fintech and e-commerce to AI platforms and interactive games.";
 
 export const Route = createFileRoute("/portfolio/")({
   head: () => ({
@@ -15,22 +17,26 @@ export const Route = createFileRoute("/portfolio/")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Portfolio,
 });
 
 function Portfolio() {
+  const [showAllProjects, setShowAllProjects] = useState(false);
   return (
     <>
       <PageHeader
         eyebrow="Portfolio"
         title="Projects & case studies"
+        action={<ProjectToggle expanded={showAllProjects} onToggle={() => setShowAllProjects((value) => !value)} />}
         copy="A selection of product and interface work — each with the problem, the approach and the design decisions behind it."
       />
 
-      <section className="mx-auto grid w-[min(92%,1180px)] gap-8 py-8 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((p, i) => (
+      <section id="project-grid" className="mx-auto grid w-[min(92%,1180px)] gap-8 py-8 md:grid-cols-2 lg:grid-cols-3">
+        {(showAllProjects ? projects : projects.slice(0, 3)).map((p, i) => (
           <Reveal key={p.slug} from="up" delay={i * 120}>
           <Link
             to="/portfolio/$slug"

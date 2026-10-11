@@ -1,6 +1,12 @@
 import autotrace from "@/assets/project-autotrace.jpg";
 import transit from "@/assets/project-transit.jpg";
 import yutnori from "@/assets/project-yutnori.jpg";
+import flaxpay from "@/assets/Flaxpay_mockup.png.asset.json";
+import aniways from "@/assets/Anyway_mockup.jpg.asset.json";
+import nexiok from "@/assets/Nexiok_mockup.png.asset.json";
+import seiro from "@/assets/Seiro_mockup.png.asset.json";
+import gardnix from "@/assets/Gardnix_mockup.png.asset.json";
+import novera from "@/assets/Novera_studio_mockup.png.asset.json";
 
 export type Project = {
   slug: string;

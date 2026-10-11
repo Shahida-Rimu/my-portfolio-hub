@@ -1,13 +1,16 @@
 import { Reveal } from "@/components/site/Reveal";
+import type { ReactNode } from "react";
 
 export function SectionHeader({
   eyebrow,
   title,
   copy,
+  action,
 }: {
   eyebrow: string;
   title: string;
   copy?: string;
+  action?: ReactNode;
 }) {
   return (
     <Reveal from="up">
@@ -16,7 +19,10 @@ export function SectionHeader({
           <span className="inline-block size-1.5 rounded-full bg-primary" />
           {eyebrow}
         </span>
-        <h2 className="mt-5 text-[clamp(1.9rem,4.4vw,3rem)] leading-[1.05]">{title}</h2>
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-5">
+          <h2 className="text-[clamp(1.9rem,4.4vw,3rem)] leading-[1.05]">{title}</h2>
+          {action}
+        </div>
         {copy && <p className="mt-5 max-w-2xl text-lg text-muted-foreground">{copy}</p>}
       </header>
     </Reveal>

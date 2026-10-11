@@ -19,6 +19,8 @@ export const Route = createFileRoute("/portfolio/$slug")({
         { name: "description", content: loaderData.project.tagline },
         { property: "og:title", content: title },
         { property: "og:description", content: loaderData.project.tagline },
+        { property: "og:type", content: "article" },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
     };
   },

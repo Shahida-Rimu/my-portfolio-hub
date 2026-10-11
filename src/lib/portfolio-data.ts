@@ -1,6 +1,12 @@
 import autotrace from "@/assets/project-autotrace.jpg";
 import transit from "@/assets/project-transit.jpg";
 import yutnori from "@/assets/project-yutnori.jpg";
+import flaxpay from "@/assets/Flaxpay_mockup.png.asset.json";
+import aniways from "@/assets/Anyway_mockup.jpg.asset.json";
+import nexiok from "@/assets/Nexiok_mockup.png.asset.json";
+import seiro from "@/assets/Seiro_mockup.png.asset.json";
+import gardnix from "@/assets/Gardnix_mockup.png.asset.json";
+import novera from "@/assets/Novera_studio_mockup.png.asset.json";
 
 export type Project = {
   slug: string;
@@ -64,6 +70,102 @@ export const projects: Project[] = [
       "Created illustrated assets with AI-assisted design tools",
       "Designed turn indicators and onboarding hints",
       "Polished animation timing for a light, playful feel",
+    ],
+  },
+  {
+    slug: "flaxpay",
+    name: "FlaxPay",
+    tagline: "A mobile wallet for clear, confident everyday payments",
+    tags: ["Mobile UI", "Fintech"],
+    image: flaxpay.url,
+    fit: "contain",
+    problem: "Mobile payment interfaces often overwhelm users with competing actions and unclear transaction feedback. This concept explores how a wallet can make balances, transfers and QR payments easier to understand without sacrificing a sense of security.",
+    solution: "A focused mobile experience with a prominent balance, distinct send and receive actions, readable activity history and a guided QR scanning flow. A high-contrast visual system gives essential financial information a consistent hierarchy.",
+    process: [
+      "Define the core wallet journeys: sign-in, balance review, transfer and QR payment",
+      "Wireframe a dashboard that prioritizes balances and frequent payment actions",
+      "Prototype onboarding, transaction feedback and QR confirmation states in Figma",
+      "Review contrast, touch targets and error recovery across the mobile flow",
+    ],
+  },
+  {
+    slug: "aniways",
+    name: "Aniways",
+    tagline: "An immersive storefront for anime collectibles and fandom culture",
+    tags: ["Web UI", "E-commerce"],
+    image: aniways.url,
+    fit: "contain",
+    problem: "Collectibles shoppers need to discover new releases quickly while comparing products across figures, manga and gaming categories. This concept addresses the tension between expressive fandom branding and a straightforward shopping experience.",
+    solution: "A responsive storefront pairs bold character-led imagery with clear category navigation, featured drops and structured product discovery. Consistent product presentation and visible trust signals support a more confident path to purchase.",
+    process: [
+      "Map browsing and purchase journeys across collectible categories",
+      "Organize navigation, new releases and promotional content into a clear hierarchy",
+      "Develop responsive storefront and product-card prototypes in Figma",
+      "Review mobile browsing, product readability and checkout entry points",
+    ],
+  },
+  {
+    slug: "nexiok",
+    name: "Nexiok",
+    tagline: "An approachable AI automation platform for growing businesses",
+    tags: ["SaaS", "AI", "UI/UX"],
+    image: nexiok.url,
+    fit: "contain",
+    problem: "AI automation offerings can be difficult to evaluate when technical language obscures practical business benefits. This concept explores how prospective customers can understand capabilities, compare plans and identify a suitable starting point.",
+    solution: "A structured SaaS website translates automation capabilities into clear service categories, supported by project examples, a focused FAQ and comparable pricing plans. Friendly visual cues make a technical product feel more accessible.",
+    process: [
+      "Identify key evaluation questions around automation services, pricing and support",
+      "Build an information architecture connecting benefits, use cases and plans",
+      "Prototype reusable service, project, FAQ and pricing components",
+      "Refine content hierarchy and responsive behavior for easier plan comparison",
+    ],
+  },
+  {
+    slug: "seiro",
+    name: "Seiro",
+    tagline: "A modern digital presence for next-generation AI solutions",
+    tags: ["Web Design", "AI Solutions"],
+    image: seiro.url,
+    fit: "contain",
+    problem: "AI consultancies must communicate complex capabilities while establishing credibility and helping visitors choose a relevant service. This concept explores a clearer presentation of integration, documentation and ongoing technical support.",
+    solution: "A visually distinctive website combines a concise offer with a scannable service layout and clear contact pathways. Modular content blocks separate key capabilities so visitors can evaluate the offering without navigating dense technical copy.",
+    process: [
+      "Define visitor goals and organize AI services around business needs",
+      "Wireframe the primary offer, service overview and enquiry pathways",
+      "Create a cohesive visual system for typography, imagery and service modules",
+      "Review responsive layouts, content contrast and contact discoverability",
+    ],
+  },
+  {
+    slug: "gardnix",
+    name: "Gardnix",
+    tagline: "A CMS-ready website for gardening and landscape services",
+    tags: ["Web UI", "CMS"],
+    image: gardnix.url,
+    fit: "contain",
+    problem: "Landscaping businesses need to explain varied services, demonstrate their work and keep seasonal content current. This concept addresses how a service website can build trust while remaining straightforward for a non-technical team to maintain.",
+    solution: "A nature-led website organizes services, project imagery, team profiles and customer feedback around a clear appointment pathway. Reusable CMS-oriented content patterns support consistent updates to projects and articles.",
+    process: [
+      "Map customer enquiries and define service, project and article content types",
+      "Plan a navigation structure that connects service discovery to appointments",
+      "Design reusable CMS templates and image-led project presentations",
+      "Review mobile readability, enquiry placement and content-editing consistency",
+    ],
+  },
+  {
+    slug: "novera-studio",
+    name: "Novera Studio",
+    tagline: "A bold agency portfolio connecting creative craft with clear storytelling",
+    tags: ["Agency", "UX"],
+    image: novera.url,
+    fit: "contain",
+    problem: "Creative agency websites can emphasize visual impact at the expense of service clarity and portfolio navigation. This concept explores how a distinctive studio identity can also help potential clients understand its expertise and start a conversation.",
+    solution: "An editorial agency experience uses expressive typography, structured service listings, curated project imagery and a dedicated team presentation. A consistent hierarchy connects the studio’s personality with practical enquiry pathways.",
+    process: [
+      "Define the studio narrative and key client evaluation journeys",
+      "Structure services, selected work and team content around client questions",
+      "Prototype an editorial visual system with reusable portfolio layouts",
+      "Refine navigation, responsive typography and contact transitions",
     ],
   },
 ];

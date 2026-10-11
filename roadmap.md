@@ -1,0 +1,3 @@
+- [x] Add six project mockups and populated detail content using the existing project schema.
+- [x] Add three-project default and View all / View less controls on both project galleries.
+- [x] Verify galleries, images, and detail navigation; apply required package update.

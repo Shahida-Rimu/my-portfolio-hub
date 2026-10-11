@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { ProjectToggle } from "@/components/site/ProjectToggle";
 import { ArrowRight, ArrowUpRight, Check, Download, Trophy } from "lucide-react";
 import portrait from "@/assets/rimu-portrait.png";
 import { Reveal } from "@/components/site/Reveal";
@@ -27,6 +29,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [showAllProjects, setShowAllProjects] = useState(false);
   return (
     <>
       <section className="relative overflow-hidden">
@@ -282,10 +285,11 @@ function Index() {
         <SectionHeader
           eyebrow="Portfolio"
           title="Projects & case studies"
+          action={<ProjectToggle expanded={showAllProjects} onToggle={() => setShowAllProjects((value) => !value)} />}
           copy="A selection of product and interface work — each with the problem, the approach and the design decisions behind it."
         />
-        <div className="mx-auto grid w-[min(92%,1180px)] gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p, i) => (
+        <div id="project-grid" className="mx-auto grid w-[min(92%,1180px)] gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {(showAllProjects ? projects : projects.slice(0, 3)).map((p, i) => (
             <Reveal key={p.slug} from="up" delay={i * 120}>
               <Link
                 to="/portfolio/$slug"

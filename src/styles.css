@@ -86,6 +86,9 @@
   --border: oklch(0.9 0.008 285);
   --input: oklch(0.9 0.008 285);
   --ring: oklch(0.55 0.16 285);
+  --mesh-a: oklch(0.68 0.16 288);
+  --mesh-b: oklch(0.62 0.15 268);
+  --mesh-c: oklch(0.72 0.12 305);
   --ink: oklch(0.18 0.015 285);
   --ink-foreground: oklch(0.98 0 0);
   --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
@@ -125,6 +128,9 @@
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 16%);
   --ring: oklch(0.72 0.14 285);
+  --mesh-a: oklch(0.58 0.17 288);
+  --mesh-b: oklch(0.52 0.16 268);
+  --mesh-c: oklch(0.62 0.15 306);
   --ink: oklch(0.98 0 0);
   --ink-foreground: oklch(0.16 0.012 285);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -223,6 +229,42 @@
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@utility mesh-glow {
+  background-image:
+    radial-gradient(42% 58% at 14% 18%, color-mix(in oklab, var(--mesh-a) 70%, transparent), transparent 68%),
+    radial-gradient(38% 52% at 86% 12%, color-mix(in oklab, var(--mesh-b) 60%, transparent), transparent 70%),
+    radial-gradient(52% 64% at 58% 92%, color-mix(in oklab, var(--mesh-c) 55%, transparent), transparent 72%);
+  filter: blur(34px) saturate(135%);
+  animation: mesh-drift 22s ease-in-out infinite;
+}
+
+@utility dot-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    color-mix(in oklab, var(--foreground) 55%, transparent) 1px,
+    transparent 1.6px
+  );
+  background-size: 24px 24px;
+  opacity: 0.07;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 45%, black 25%, transparent 80%);
+}
+
+@keyframes mesh-drift {
+  0%,
+  100% {
+    transform: translate3d(-2%, -1%, 0) scale(1.04);
+  }
+  50% {
+    transform: translate3d(3%, 2%, 0) scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mesh-glow {
+    animation: none;
   }
 }
 

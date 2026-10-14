@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ProjectToggle } from "@/components/site/ProjectToggle";
-import { ArrowRight, ArrowUpRight, Check, Download, Trophy } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Download, MousePointer2, Sparkles, Trophy } from "lucide-react";
 import portrait from "@/assets/rimu-portrait.png";
 import { Reveal } from "@/components/site/Reveal";
 import { TechMarquee } from "@/components/site/TechMarquee";
 import { SectionHeader } from "@/components/site/SectionHeader";
 
-import { projects, services, timeline } from "@/lib/portfolio-data";
+import { contact, projects, services, timeline } from "@/lib/portfolio-data";
 
 
 const title = "Shahida Akter Rimu — UI/UX Designer & Frontend Developer";
@@ -358,19 +358,57 @@ function Index() {
 
         <div className="mx-auto w-[min(92%,1180px)] pt-16">
           <Reveal from="up">
-            <div className="flex flex-wrap items-center justify-between gap-6 rounded-3xl border border-border bg-accent/50 p-10">
-              <div>
-                <h3 className="text-2xl">Have a project in mind?</h3>
-                <p className="mt-2 text-muted-foreground">
-                  Tell me about it — I'll get back to you within a day.
-                </p>
-              </div>
-              <Link
-                to="/contact"
-                className="rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            <div className="relative isolate overflow-hidden rounded-[2.5rem] border border-border/80 bg-card/40 p-8 shadow-2xl shadow-primary/10 backdrop-blur-2xl sm:p-12 lg:p-16">
+              <div
+                aria-hidden
+                className="mesh-glow pointer-events-none absolute -inset-24 z-0 opacity-60"
+              />
+              <div aria-hidden className="dot-grid pointer-events-none absolute inset-0 z-0" />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-x-12 top-0 z-0 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute right-10 top-9 z-0 hidden animate-float lg:block"
               >
-                Start a conversation
-              </Link>
+                <MousePointer2 className="size-5 -rotate-6 text-primary" />
+                <span className="-mt-1 ml-4 inline-block rounded-lg rounded-tl-none bg-primary px-2.5 py-1 text-[11px] font-semibold text-primary-foreground">
+                  Shahida
+                </span>
+              </div>
+
+              <div className="relative z-10 flex flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-14">
+                <div className="max-w-xl">
+                  <span className="eyebrow text-primary">
+                    <span className="size-1.5 rounded-full bg-primary" />
+                    Next project
+                  </span>
+                  <h3 className="mt-5 text-[clamp(1.7rem,4vw,2.6rem)] leading-[1.08]">
+                    Let's craft your next digital experience.
+                  </h3>
+                  <p className="mt-5 max-w-lg leading-relaxed text-muted-foreground">
+                    From intuitive UI/UX to complete CMS solutions—I am ready to bring your vision
+                    to life. Let's build something amazing together.
+                  </p>
+                </div>
+
+                <div className="flex flex-col items-start gap-4 sm:items-center lg:items-end">
+                  <Link
+                    to="/contact"
+                    className="group inline-flex items-center gap-2.5 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:text-primary-foreground hover:shadow-xl hover:shadow-primary/50 hover:brightness-110"
+                  >
+                    Let's Talk Design
+                    <Sparkles className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:rotate-12 group-hover:scale-110" />
+                  </Link>
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="text-xs text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    or email {contact.email}
+                  </a>
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>

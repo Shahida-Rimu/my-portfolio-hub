@@ -403,7 +403,7 @@ function Index() {
                   </Link>
                   <a
                     href={`mailto:${contact.email}`}
-                    className="text-xs text-muted-foreground transition-colors hover:text-primary"
+                    className="text-[13px] text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
                   >
                     or email {contact.email}
                   </a>

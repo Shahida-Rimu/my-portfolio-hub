@@ -124,7 +124,7 @@ export function SiteFooter() {
 
         {/* Bottom bar */}
         <div className="mt-16 flex flex-col-reverse items-center justify-between gap-5 border-t border-border/60 pt-7 sm:flex-row">
-          <p className="text-xs text-muted-foreground/80">
+          <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Shahida Akter Rimu. All rights reserved.
           </p>
           <button

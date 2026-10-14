@@ -163,7 +163,6 @@ export const timeline = [
 
 export const contact = {
   email: "shahida.rimu26@gmail.com",
-  phone: "+8801581737636",
   linkedin: "https://www.linkedin.com/in/shahida-akter-rimu-4b9033350",
   linkedinLabel: "shahida-akter-rimu-4b9033350",
   behance: "https://www.behance.net/shahidarimu",

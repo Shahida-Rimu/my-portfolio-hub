@@ -258,6 +258,14 @@
   mask-image: radial-gradient(ellipse 85% 75% at 50% 45%, black 25%, transparent 80%);
 }
 
+/* Glowing "available for work" dot used by the footer status badge. */
+@utility status-dot {
+  background-color: var(--success);
+  box-shadow:
+    0 0 0 3px color-mix(in oklab, var(--success) 18%, transparent),
+    0 0 14px 2px color-mix(in oklab, var(--success) 55%, transparent);
+}
+
 @keyframes mesh-drift {
   0%,
   100% {

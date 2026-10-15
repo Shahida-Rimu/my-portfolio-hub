@@ -91,6 +91,7 @@
   --mesh-a: oklch(0.68 0.16 288);
   --mesh-b: oklch(0.62 0.15 268);
   --mesh-c: oklch(0.72 0.12 305);
+  --shadow-project-hover: 0 20px 45px -20px color-mix(in oklab, var(--primary) 18%, transparent);
   --success: oklch(0.62 0.15 155);
   --success-foreground: oklch(0.99 0 0);
   --ink: oklch(0.18 0.015 285);
@@ -135,6 +136,7 @@
   --mesh-a: oklch(0.58 0.17 288);
   --mesh-b: oklch(0.52 0.16 268);
   --mesh-c: oklch(0.62 0.15 306);
+  --shadow-project-hover: 0 20px 45px -20px color-mix(in oklab, var(--primary) 16%, transparent);
   --success: oklch(0.78 0.16 155);
   --success-foreground: oklch(0.16 0.012 285);
   --ink: oklch(0.98 0 0);
@@ -264,6 +266,13 @@
   box-shadow:
     0 0 0 3px color-mix(in oklab, var(--success) 18%, transparent),
     0 0 14px 2px color-mix(in oklab, var(--success) 55%, transparent);
+}
+
+@utility project-card {
+  &:hover,
+  &:focus-visible {
+    box-shadow: var(--shadow-project-hover);
+  }
 }
 
 @keyframes mesh-drift {

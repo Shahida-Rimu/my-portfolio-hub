@@ -2,4 +2,4 @@
 - [x] Add three-project default and View all / View less controls on both project galleries.
 - [x] Verify galleries, images, and detail navigation; apply required package update.
 - [x] Refine both project galleries and verify expansion, detail navigation, hover motion, and mobile layout.
-- [ ] Replace both galleries with borderless natural-image masonry; verify toggles, links, and responsive spacing.
+- [x] Replace both galleries with borderless natural-image masonry; verify toggles, links, and responsive spacing.

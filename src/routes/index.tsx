@@ -291,7 +291,7 @@ function Index() {
           action={<ProjectToggle expanded={showAllProjects} onToggle={() => setShowAllProjects((value) => !value)} />}
           copy="A selection of product and interface work — each with the problem, the approach and the design decisions behind it."
         />
-        <div id="project-grid" className="mx-auto grid w-[min(92%,1180px)] items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div id="project-grid" className="project-masonry mx-auto w-[min(92%,1180px)]">
           {(showAllProjects ? projects : projects.slice(0, 3)).map((p, i) => (
             <ProjectCard key={p.slug} project={p} index={i} />
           ))}

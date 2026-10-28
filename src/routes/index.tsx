@@ -34,15 +34,12 @@ function Index() {
   return (
     <>
       <section className="relative overflow-hidden">
+        {/* Single subtle coral glow behind the hero */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-40 -right-24 -z-10 size-[38rem] rounded-full bg-primary/20 blur-[120px]"
+          className="pointer-events-none absolute -top-44 left-1/2 -z-10 size-[42rem] -translate-x-1/2 rounded-full bg-primary/15 blur-[140px]"
         />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -bottom-52 -left-32 -z-10 size-[32rem] rounded-full bg-accent/70 blur-[120px]"
-        />
-        <div className="mx-auto grid w-[min(92%,1180px)] items-center gap-14 py-16 md:grid-cols-[1.05fr_0.95fr] md:py-24">
+        <div className="page-container grid items-center gap-14 py-16 md:py-24">
           <div>
             <Reveal from="up" delay={0}>
             <span className="eyebrow rounded-full border border-border bg-card/70 px-4 py-2 text-primary backdrop-blur">
@@ -56,8 +53,8 @@ function Index() {
             <Reveal from="up" delay={120}>
             <h1 className="mt-7 text-[clamp(2.4rem,6.2vw,4.15rem)] leading-[1.02]">
               Building{" "}
-              <span className="bg-gradient-to-r from-primary via-accent to-foreground bg-clip-text text-transparent">
-                intuitive & accessible
+              <span className="text-primary">
+                intuitive &amp; accessible
               </span>{" "}
               digital experiences
             </h1>
@@ -70,7 +67,7 @@ function Index() {
               ].map((label) => (
                 <li
                   key={label}
-                  className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/80 sm:text-sm"
+                  className="flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.16em] text-foreground/80 sm:text-sm"
                 >
                   <span aria-hidden className="size-2.5 shrink-0 bg-primary" />
                   {label}
@@ -115,17 +112,13 @@ function Index() {
                   <dt className="whitespace-nowrap font-display text-base leading-tight text-foreground xl:text-2xl">
                     {s.k}
                   </dt>
-                  <dd className="mt-1 text-xs text-muted-foreground">{s.v}</dd>
+                  <dd className="mt-1 text-[13px] text-muted-foreground">{s.v}</dd>
                 </Reveal>
               ))}
             </dl>
           </div>
           <Reveal from="scale" delay={200} className="relative mx-auto w-full max-w-md animate-float">
-            <div
-              aria-hidden
-              className="absolute -inset-3 -z-10 rounded-[2.5rem] bg-gradient-to-br from-primary/40 via-accent to-transparent blur-xl"
-            />
-            <div className="rounded-[2.25rem] border border-border bg-card/70 p-3 shadow-2xl backdrop-blur">
+            <div className="rounded-[2.25rem] border border-border bg-card/70 p-3 shadow-2xl shadow-foreground/10 backdrop-blur">
               <img
                 src={portrait}
                 alt="Portrait of Shahida Akter Rimu"
@@ -138,7 +131,7 @@ function Index() {
             </div>
             <div className="absolute -bottom-5 left-4 rounded-2xl border border-border bg-card px-5 py-3 shadow-lg">
               <p className="font-display text-sm">Figma → CMS</p>
-              <p className="text-xs text-muted-foreground">Pixel-perfect web development</p>
+              <p className="text-[13px] text-muted-foreground">Pixel-perfect web development</p>
             </div>
           </Reveal>
         </div>
@@ -146,14 +139,14 @@ function Index() {
 
       <TechMarquee />
 
-      <section id="about" className="scroll-mt-28 py-20 md:py-24">
+      <section id="about" className="scroll-mt-28 py-24 md:py-30">
         <SectionHeader
           eyebrow="About me"
           title="Design thinking, applied to real problems"
           copy="I'm Shahida Akter Rimu, a UI/UX & CMS Designer building intuitive, accessible digital experiences."
         />
 
-        <div className="mx-auto grid w-[min(92%,1180px)] items-center gap-16 lg:grid-cols-2">
+        <div className="page-container grid items-center gap-16 lg:grid-cols-2">
           <div className="space-y-6">
             <Reveal from="up">
               <p className="text-lg leading-relaxed text-muted-foreground">
@@ -168,17 +161,17 @@ function Index() {
 
           <Reveal from="up" delay={200}>
             <div className="relative flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-                {[
-                  { label: "UI/UX Design", dot: "bg-primary" },
-                  { label: "WordPress", dot: "bg-accent" },
-                  { label: "Figma", dot: "bg-chart-3" },
-                  { label: "React", dot: "bg-chart-2" },
-                  { label: "Canva", dot: "bg-chart-5" },
-                  { label: "HTML/CSS", dot: "bg-chart-4" },
-                ].map((skill, i) => (
+              {[
+                { label: "UI/UX Design", dot: "bg-foreground/40" },
+                { label: "WordPress", dot: "bg-foreground/40" },
+                { label: "Figma", dot: "bg-foreground/40" },
+                { label: "React", dot: "bg-foreground/40" },
+                { label: "Canva", dot: "bg-foreground/40" },
+                { label: "HTML/CSS", dot: "bg-foreground/40" },
+              ].map((skill, i) => (
                 <div
                   key={skill.label}
-                  className={`flex items-center gap-3 rounded-full border border-border bg-card/60 px-6 py-3 shadow-lg shadow-primary/5 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-primary/15 ${i % 2 === 1 ? "lg:translate-y-4" : i % 3 === 0 ? "lg:-translate-y-2" : ""}`}
+                  className={`flex items-center gap-3 rounded-full border border-border bg-card/60 px-6 py-3 shadow-lg shadow-foreground/5 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-primary/15 ${i % 2 === 1 ? "lg:translate-y-4" : i % 3 === 0 ? "lg:-translate-y-2" : ""}`}
                 >
                   <span className={`size-2.5 rounded-full ${skill.dot}`} />
                   <span className="font-medium text-foreground">{skill.label}</span>
@@ -188,12 +181,12 @@ function Index() {
           </Reveal>
         </div>
 
-        <div className="mx-auto w-[min(92%,1180px)] pt-24">
+        <div className="page-container pt-28">
           <Reveal from="up">
-            <h3 className="text-center text-3xl">Education & experience</h3>
+            <h3 className="text-center text-[clamp(2.5rem,5vw,3.5rem)] leading-[1.05]">Education &amp; experience</h3>
           </Reveal>
 
-          <div className="relative mt-12 max-w-4xl">
+          <div className="relative mt-14">
             <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
 
             <div className="space-y-10">
@@ -207,15 +200,15 @@ function Index() {
                 >
                   <div className="absolute left-4 top-6 z-10 size-3 -translate-x-1/2 rounded-full border-2 border-background bg-primary ring-4 ring-primary/25" />
 
-                  <div className="group ml-10 rounded-2xl border border-border bg-card/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
-                    <span className="inline-block rounded-md bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
+                  <div className="group ml-10 rounded-2xl border border-border bg-card/70 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
+                    <span className="inline-block rounded-md bg-primary/10 px-3 py-1 text-[13px] font-bold uppercase tracking-wider text-primary">
                       {t.period}
                     </span>
-                    <h4 className="font-display mt-4 text-lg transition-colors group-hover:text-primary">
+                    <h4 className="font-display mt-4 text-[1.25rem] transition-colors group-hover:text-primary">
                       {t.title}
                     </h4>
-                    <p className="text-sm font-medium text-foreground/80">{t.org}</p>
-                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                    <p className="text-[15px] font-medium text-foreground/80">{t.org}</p>
+                    <p className="mt-2 text-base leading-relaxed text-muted-foreground">
                       {t.copy}
                     </p>
                   </div>
@@ -226,15 +219,15 @@ function Index() {
         </div>
       </section>
 
-      <section className="scroll-mt-28 py-20 md:py-24">
+      <section className="scroll-mt-28 py-24 md:py-30">
         <SectionHeader
           eyebrow="Highlights"
           title="Participations & Achievements"
           copy="A few milestones from competitions, programs, and collaborative challenges."
         />
 
-        <div className="mx-auto w-[min(92%,1180px)]">
-          <div className="grid gap-6 md:grid-cols-2">
+        <div className="page-container">
+          <div className="grid gap-8 md:grid-cols-2">
             {[
               {
                 title: "Excellence Award Winner, 2026 Project Competition",
@@ -263,16 +256,16 @@ function Index() {
                 delay={i * 120}
                 className="h-full"
               >
-                <div className="group h-full rounded-2xl border border-border bg-card/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
-                  <div className="flex items-start gap-4">
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                      <Trophy className="size-5" />
+                <div className="group h-full rounded-2xl border border-border bg-card/70 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
+                  <div className="flex items-start gap-5">
+                    <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                      <Trophy className="size-6" />
                     </span>
                     <div>
-                      <h4 className="font-display text-lg transition-colors group-hover:text-primary">
+                      <h4 className="font-display text-[1.25rem] leading-snug transition-colors group-hover:text-primary">
                         {a.title}
                       </h4>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
                         {a.description}
                       </p>
                     </div>
@@ -284,36 +277,36 @@ function Index() {
         </div>
       </section>
 
-      <section id="portfolio" className="scroll-mt-28 py-20 md:py-24">
+      <section id="portfolio" className="scroll-mt-28 py-24 md:py-30">
         <SectionHeader
           eyebrow="Portfolio"
           title="Projects & case studies"
           action={<ProjectToggle expanded={showAllProjects} onToggle={() => setShowAllProjects((value) => !value)} />}
           copy="A selection of product and interface work — each with the problem, the approach and the design decisions behind it."
         />
-        <div id="project-grid" className="project-masonry mx-auto w-[min(92%,1180px)]">
+        <div id="project-grid" className="project-masonry page-container">
           {(showAllProjects ? projects : projects.slice(0, 3)).map((p, i) => (
             <ProjectCard key={p.slug} project={p} index={i} />
           ))}
         </div>
       </section>
 
-      <section id="services" className="scroll-mt-28 py-20 md:py-24">
+      <section id="services" className="scroll-mt-28 py-24 md:py-30">
         <SectionHeader
           eyebrow="Services"
           title="How I can help"
           copy="From first wireframe to shipped interface — design and frontend work with accessibility built in."
         />
-        <div className="mx-auto grid w-[min(92%,1180px)] gap-8 lg:grid-cols-3">
+        <div className="page-container grid gap-8 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.title} from="up" delay={i * 120} className="h-full">
               <div className="h-full rounded-3xl border border-border bg-card p-8 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15">
-                <h3 className="text-xl">{s.title}</h3>
+                <h3 className="text-[1.375rem]">{s.title}</h3>
                 <p className="mt-3 text-muted-foreground">{s.copy}</p>
                 <ul className="mt-6 space-y-3">
                   {s.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm">
-                      <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                    <li key={item} className="flex items-start gap-3 text-[15px]">
+                      <Check className="mt-1 size-4 shrink-0 text-primary" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -323,13 +316,9 @@ function Index() {
           ))}
         </div>
 
-        <div className="mx-auto w-[min(92%,1180px)] pt-16">
+        <div className="page-container pt-24">
           <Reveal from="up">
             <div className="relative isolate overflow-hidden rounded-[2.5rem] border border-border/80 bg-card/40 p-8 shadow-2xl shadow-primary/10 backdrop-blur-2xl sm:p-12 lg:p-16">
-              <div
-                aria-hidden
-                className="mesh-glow pointer-events-none absolute -inset-24 z-0 opacity-60"
-              />
               <div aria-hidden className="dot-grid pointer-events-none absolute inset-0 z-0" />
               <div
                 aria-hidden
@@ -340,7 +329,7 @@ function Index() {
                 className="pointer-events-none absolute right-10 top-9 z-0 hidden animate-float lg:block"
               >
                 <MousePointer2 className="size-5 -rotate-6 text-primary" />
-                <span className="-mt-1 ml-4 inline-block rounded-lg rounded-tl-none bg-primary px-2.5 py-1 text-[11px] font-semibold text-primary-foreground">
+                <span className="-mt-1 ml-4 inline-block rounded-lg rounded-tl-none bg-primary px-2.5 py-1 text-[13px] font-semibold text-primary-foreground">
                   Shahida
                 </span>
               </div>

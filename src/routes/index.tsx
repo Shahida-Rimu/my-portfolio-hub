@@ -2,14 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ProjectToggle } from "@/components/site/ProjectToggle";
 import { ProjectCard } from "@/components/site/ProjectCard";
-import { ArrowRight, Check, Download, MousePointer2, Sparkles, Trophy } from "lucide-react";
+import { ArrowRight, Check, MousePointer2, Sparkles } from "lucide-react";
 import portrait from "@/assets/rimu-portrait.png";
 import { Reveal } from "@/components/site/Reveal";
 import { TechMarquee } from "@/components/site/TechMarquee";
 import { SectionHeader } from "@/components/site/SectionHeader";
 
-import { contact, projects, services, timeline } from "@/lib/portfolio-data";
-
+import { contact, projects, services } from "@/lib/portfolio-data";
 
 const title = "Shahida Akter Rimu — UI/UX & CMS Designer";
 const description =
@@ -93,16 +92,6 @@ function Index() {
               >
                 Contact me
               </Link>
-              <a
-                href="/ShahidaRimu_CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                download="ShahidaRimu_CV.pdf"
-                className="inline-flex items-center gap-2 rounded-full border border-primary bg-transparent px-6 py-3.5 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:bg-primary/10 hover:text-primary"
-              >
-                Download Resume
-                <Download className="size-4" />
-              </a>
             </div>
             </Reveal>
             <dl className="mt-12 grid max-w-full grid-cols-3 gap-2 border-t border-border pt-8 sm:gap-4 xl:max-w-2xl xl:gap-6">
@@ -168,14 +157,14 @@ function Index() {
 
           <Reveal from="up" delay={200}>
             <div className="relative flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-                {[
-                  { label: "UI/UX Design", dot: "bg-primary" },
-                  { label: "WordPress", dot: "bg-accent" },
-                  { label: "Figma", dot: "bg-chart-3" },
-                  { label: "React", dot: "bg-chart-2" },
-                  { label: "Canva", dot: "bg-chart-5" },
-                  { label: "HTML/CSS", dot: "bg-chart-4" },
-                ].map((skill, i) => (
+              {[
+                { label: "UI/UX Design", dot: "bg-primary" },
+                { label: "WordPress", dot: "bg-accent" },
+                { label: "Figma", dot: "bg-chart-3" },
+                { label: "React", dot: "bg-chart-2" },
+                { label: "Canva", dot: "bg-chart-5" },
+                { label: "HTML/CSS", dot: "bg-chart-4" },
+              ].map((skill, i) => (
                 <div
                   key={skill.label}
                   className={`flex items-center gap-3 rounded-full border border-border bg-card/60 px-6 py-3 shadow-lg shadow-primary/5 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-primary/15 ${i % 2 === 1 ? "lg:translate-y-4" : i % 3 === 0 ? "lg:-translate-y-2" : ""}`}
@@ -188,99 +177,16 @@ function Index() {
           </Reveal>
         </div>
 
-        <div className="mx-auto w-[min(92%,1180px)] pt-24">
+        <div className="mx-auto w-[min(92%,1180px)] pt-14">
           <Reveal from="up">
-            <h3 className="text-center text-3xl">Education & experience</h3>
+            <Link
+              to="/about"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/30"
+            >
+              More About Me
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Reveal>
-
-          <div className="relative mt-12 max-w-4xl">
-            <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
-
-            <div className="space-y-10">
-              {timeline.map((t, i) => (
-                <Reveal
-                  key={t.title}
-                  as="div"
-                  from="up"
-                  delay={i * 120}
-                  className="relative"
-                >
-                  <div className="absolute left-4 top-6 z-10 size-3 -translate-x-1/2 rounded-full border-2 border-background bg-primary ring-4 ring-primary/25" />
-
-                  <div className="group ml-10 rounded-2xl border border-border bg-card/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
-                    <span className="inline-block rounded-md bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
-                      {t.period}
-                    </span>
-                    <h4 className="font-display mt-4 text-lg transition-colors group-hover:text-primary">
-                      {t.title}
-                    </h4>
-                    <p className="text-sm font-medium text-foreground/80">{t.org}</p>
-                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                      {t.copy}
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="scroll-mt-28 py-20 md:py-24">
-        <SectionHeader
-          eyebrow="Highlights"
-          title="Participations & Achievements"
-          copy="A few milestones from competitions, programs, and collaborative challenges."
-        />
-
-        <div className="mx-auto w-[min(92%,1180px)]">
-          <div className="grid gap-6 md:grid-cols-2">
-            {[
-              {
-                title: "Excellence Award Winner, 2026 Project Competition",
-                description:
-                  "Awarded during the 2026 WFK IT Online Training Program. Recognized as part of Batch 2 Team 7 for demonstrating the highest level of creativity, technical excellence, and innovation in the Final Project Competition.",
-              },
-              {
-                title: "Finalist, DDIEXPO 2026",
-                description:
-                  "Showcased 'AutoTrace AI', ranking Top 9 among 250 teams and earning recognition from the UITS IQAC Innovation Hub.",
-              },
-              {
-                title: "Finalist, Hult Prize at UITS",
-                description:
-                  "Competed with Team IQ Optional in the NextJobz innovation challenge.",
-              },
-              {
-                title: "Semi-Finalist, Undergraduate Startup Challenge 2025",
-                description:
-                  "Reached the semi-finals in the startup competition hosted by the BRAC University Entrepreneurship Development Forum (BUEDF) with Team IQ Optional.",
-              },
-            ].map((a, i) => (
-              <Reveal
-                key={a.title}
-                from="up"
-                delay={i * 120}
-                className="h-full"
-              >
-                <div className="group h-full rounded-2xl border border-border bg-card/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
-                  <div className="flex items-start gap-4">
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                      <Trophy className="size-5" />
-                    </span>
-                    <div>
-                      <h4 className="font-display text-lg transition-colors group-hover:text-primary">
-                        {a.title}
-                      </h4>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                        {a.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 

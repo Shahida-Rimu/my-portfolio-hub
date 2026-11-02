@@ -136,10 +136,10 @@ export const services = [
 
 export const timeline = [
   {
-    period: "JUL 2026 — PRESENT",
+    period: "JUL 2026 — OCT 2026",
     title: "IT & Graphics Intern",
     org: "Vacancy Hunting",
-    copy: "Design structured visual assets, layouts, and promotional materials utilizing Figma and Canva. Manage official online accounts to drive digital engagement and ensure consistent brand identity.",
+    copy: "Designed structured visual assets, layouts, and promotional materials utilizing Figma and Canva. Managed official online accounts to drive digital engagement and ensure consistent brand identity.",
   },
   {
     period: "Jul 2026 — Aug 2026",

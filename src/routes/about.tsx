@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Download, Trophy } from "lucide-react";
+import { Trophy } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { Reveal } from "@/components/site/Reveal";

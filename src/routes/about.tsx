@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Download, Trophy } from "lucide-react";
+import { Trophy } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { Reveal } from "@/components/site/Reveal";
@@ -30,18 +30,6 @@ function About() {
         eyebrow="About me"
         title="Design thinking, applied to real problems"
         copy="I'm Shahida Akter Rimu, a UI/UX & CMS Designer building intuitive, accessible digital experiences."
-        action={
-          <a
-            href="/ShahidaRimu_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            download="ShahidaRimu_CV.pdf"
-            className="inline-flex items-center gap-2 rounded-full border border-primary bg-transparent px-6 py-3.5 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:bg-primary/10 hover:text-primary"
-          >
-            Download CV
-            <Download className="size-4" />
-          </a>
-        }
       />
 
       <section className="mx-auto w-[min(92%,1180px)] py-8">

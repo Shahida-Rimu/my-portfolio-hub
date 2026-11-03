@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ProjectToggle } from "@/components/site/ProjectToggle";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import { ArrowRight, Check, MousePointer2, Sparkles } from "lucide-react";
-import portrait from "@/assets/rimu-portrait.png";
+import portrait from "@/assets/rimu-portrait.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { TechMarquee } from "@/components/site/TechMarquee";
 import { SectionHeader } from "@/components/site/SectionHeader";
